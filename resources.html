@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Blog - Fortis Fabrication</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    nav ul {
+      position: relative;
+    }
+    nav ul li {
+      position: relative;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #006600;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: 220px;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+    }
+    .dropdown-menu li {
+      border-bottom: 1px solid #004d00;
+    }
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .dropdown:hover > .dropdown-menu {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Fortis Fabrication</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="services.html">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="design.html" target="_blank">Design and Engineering</a></li>
+                        <li><a href="fabrication.html" target="_blank">Fabrication</a></li>
+                        <li><a href="passivation.html" target="_blank">Cleaning and Passivation</a></li>
+                        <li><a href="polishing.html" target="_blank">Polishing and Surface Coating</a></li>
+                    </ul>
+                </li>
+                <li><a href="industry.html">Industry Applications</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="resources.html">Resources & Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <div class="page-wrapper">  
+         <h1>Resources & Blog</h1>
+
+        <section class="resources">
+            <p>Welcome to our Resources & Blog section, where we share valuable insights, industry news, and technical knowledge related to stainless steel fabrication, passivation, and surface treatment.</p>
+            <ul>
+                <li><a href="#">5 Key Considerations for Pressure Vessel Design</a></li>
+                <li><a href="#">Material Selection in Food-Grade Fabrication</a></li>
+                <li><a href="#">How Passivation Improves Corrosion Resistance</a></li>
+            </ul>
+
+            <h2>FAQs</h2>
+            <p>Q: What materials do you work with?<br>A: Stainless steel, carbon steel, and specialty alloys.</p>
+            <p>Q: Do you provide installation services?<br>A: Yes, we offer complete consultation and installation support.</p>
+
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="#">Design Guide PDF</a></li>
+                <li><a href="#">Cleaning & Maintenance Checklist</a></li>
+                <li><a href="#">Past Project Case Studies</a></li>
+            </ul>
+
+            <p>Blog posts are written internally by our engineers and industry experts.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Company Name. All rights reserved.</p>
+        <p>Contact: email@example.com | Phone: 123-456-7890</p>
+    </footer>
+</body>
+</html>

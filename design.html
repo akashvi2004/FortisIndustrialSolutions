@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services – Fortis Fabrication</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    nav ul {
+      position: relative;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #006600;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      min-width: 220px;
+      z-index: 1000;
+    }
+    .dropdown-menu li {
+      border-bottom: 1px solid #004d00;
+    }
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Fortis Fabrication</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="services.html">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="design.html">Design and Engineering</a></li>
+            <li><a href="fabrication.html">Fabrication</a></li>
+            <li><a href="passivation.html">Cleaning and Passivation</a></li>
+            <li><a href="polishing.html">Polishing and Surface Coating</a></li>
+          </ul>
+        </li>
+        <li><a href="industry.html">Industry Applications</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="resources.html">Resources & Blog</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-wrapper">
+      <h1>Our Services</h1>
+        <section class="services">
+          <article id="design">
+            <h2>A. Design and Engineering</h2>
+            <p>We deliver precise CAD-based engineering, system modeling, and custom component design, tailored for sanitary and industrial environments. Our team collaborates closely with stakeholders to develop efficient, cost-effective systems ready for fabrication and compliance testing.</p>
+          </article>
+
+          <article id="fabrication">
+            <h2>B. Fabrication</h2>
+            <p>Our team specializes in sanitary process equipment fabrication using TIG, MIG, orbital welding, and FCAW. Certified under ASME Section IX, we ensure all pressure vessels and piping meet industry codes and cleanliness standards.</p>
+          </article>
+
+          <article id="passivation">
+            <h2>C. Cleaning and Passivation</h2>
+            <p>We offer chemical cleaning and passivation to remove contaminants and restore stainless steel surfaces to their corrosion-resistant state. Methods include nitric, citric, and phosphoric acid treatment, supported by ASTM A967 and A380 documentation and on-site or in-house service delivery.</p>
+          </article>
+
+          <article id="polishing">
+            <h2>D. Polishing and Surface Coating</h2>
+            <p>From RA finish control to passivation-ready polish, our expert technicians enhance both surface appearance and corrosion resistance. Options include mechanical polishing, electropolishing, and coating application tailored to industry requirements.</p>
+          </article>
+        </section>
+      </div>
+  </main>
+
+  <footer>
+    <p>Contact us: email@example.com | +1-123-456-7890</p>
+    <p>&copy; 2025 Fortis Fabrication. All rights reserved.</p>
+  </footer>
+</body>
+</html>
