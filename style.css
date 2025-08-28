@@ -8,20 +8,29 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #003000;
-    color: white;
-    padding: 15px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    justify-content: space-between;
+    background: #003000;  
+    padding: 0 20px;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
 }
+
+.logo-img {
+    height: 40px;       /* adjust to balance with text */
+    width: auto;        /* keeps aspect ratio */
+    margin-right: 10px; /* space between logo and text */
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #f9f9f9;
+}
+
 
 nav ul {
     list-style: none;
