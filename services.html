@@ -1,103 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Fortis Industrial Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-    nav ul {
-      position: relative;
-    }
-    nav ul li {
-      position: relative;
-    }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background-color: #006600;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      min-width: 220px;
-      top: 100%;
-      left: 0;
-      z-index: 1000;
-    }
-    .dropdown-menu li {
-      border-bottom: 1px solid #004d00;
-    }
-    .dropdown-menu li a {
-      display: block;
-      padding: 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .dropdown:hover > .dropdown-menu {
-      display: block;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - Fortis Industrial Solutions</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <div class="logo">
+<div id="top"></div> 
+  <header class="site-header">
+    <div class="logo">
       <img src="images/LOGO Final.jpg" alt="Fortis Logo" class="logo-img">
-      <span>Fortis Industrial Solutions</span>
+      <div class="logo-text">
+        <h1>Fortis</h1>
+        <p>Industrial Solutions</p>
+      </div>
     </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li class="dropdown">
-                    <a href="services.html">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="design.html" target="_blank">Design and Engineering</a></li>
-                        <li><a href="fabrication.html" target="_blank">Fabrication</a></li>
-                        <li><a href="passivation.html" target="_blank">Cleaning and Passivation</a></li>
-                        <li><a href="polishing.html" target="_blank">Polishing and Surface Coating</a></li>
-                    </ul>
-                </li>
-                <li><a href="industry.html">Industry Applications</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="resources.html">Resources & Blog</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <div class="page-wrapper">
-            <h1>Products</h1>
-            <p>At Fortis Industrial Solutions, we specialize in high-quality stainless steel tanks and skids designed for various industrial applications. Our products are engineered to meet the highest standards of safety, performance, and compliance.</p>
-        <section class="products">
-            <h2>A. Tanks</h2>
-            <p>We offer stainless steel, carbon steel, jacketed, and mixing tanks for various industrial uses. Sizes range from small lab tanks to large pressure vessels with ASME certifications.</p>
-            <a href="pdfs/tanks_specs.pdf">Download Tank Specifications (PDF)</a>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
 
-            <h2>B. Skids</h2>
-            <p>Our custom skids are designed for modular systems, including pumping, heating, and filtration. CAD files available upon request.</p>
-            <a href="pdfs/skids_specs.pdf">Download Skid Info (PDF)</a>
+        <li class="dropdown">
+          <a href="services.html">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="design.html">Design & Engineering</a></li>
+            <li><a href="fabrication.html">Fabrication</a></li>
+            <li><a href="passivation.html">Cleaning & Passivation</a></li>
+            <li><a href="polishing.html">Polishing & Surface Coating</a></li>
+          </ul>
+        </li>
 
-            <h2>C. Accessories</h2>
-            <p>Complete selection of valves, fittings, sensors, and accessories. Available in stainless steel, brass, and polymer.</p>
-            <a href="pdfs/accessories_catalog.pdf">View Catalog (PDF)</a>
+        <li><a href="industry.html">Industry Applications</a></li>
+        <!-- removed per plan: Certifications / Resources -->
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <h2>D. Services</h2>
-            <p>We provide design, installation, and consulting services with complete workflow transparency from design to delivery. Industries served include food & beverage, pharmaceuticals, and chemicals.</p>
+  <main>
+    <div class="page-wrapper">
+      <h1>Products</h1>
+      <p>At Fortis Industrial Solutions, we specialize in high-quality stainless steel tanks and skids designed for various industrial applications. Our products are engineered to meet the highest standards of safety, performance, and compliance.</p>
 
-            <h2>E–G. Other Products & Resources</h2>
-            <p>Ask about our custom designs and in-house capabilities. Quotes are available for all listed and custom products.</p>
-            <section class="cta">
-            <a href="contact.html">Request a Quote</a>
+      <section class="products">
+        <h2>A. Tanks</h2>
+        <p>We offer stainless steel, carbon steel, jacketed, and mixing tanks for various industrial uses. Sizes range from small lab tanks to large pressure vessels with ASME certifications.</p>
+        <p><a href="pdfs/tanks_specs.pdf">Download Tank Specifications (PDF)</a></p>
+
+        <h2>B. Skids</h2>
+        <p>Our custom skids are designed for modular systems, including pumping, heating, and filtration. CAD files available upon request.</p>
+        <p><a href="pdfs/skids_specs.pdf">Download Skid Info (PDF)</a></p>
+
+        <h2>C. Accessories</h2>
+        <p>Complete selection of valves, fittings, sensors, and accessories. Available in stainless steel, brass, and polymer.</p>
+        <p><a href="pdfs/accessories_catalog.pdf">View Catalog (PDF)</a></p>
+
+        <h2>D. Services</h2>
+        <p>We provide design, installation, and consulting services with complete workflow transparency from design to delivery. Industries served include food & beverage, pharmaceuticals, and chemicals.</p>
+
+        <h2>E–G. Other Products & Resources</h2>
+        <p>Ask about our custom designs and in-house capabilities. Quotes are available for all listed and custom products.</p>
+
+        <section class="cta">
+          <a href="contact.html">Request a Quote</a>
         </section>
+      </section>
+    </div>
+  </main>
 
-        </section>
-        </div>
-    </main>
+  <!-- FOOTER (standardized) -->
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div>
+        <p><strong>Contact:</strong></p>
+        <p>
+          <a href="mailto:sales@ifortisol.com">sales@ifortisol.com</a><br>
+          <a href="tel:4166131927">416-613-1927</a>
+        </p>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2025 Fortis Industrial Solutions</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Fortis Industrial Solutions</p>
-        <p>Contact: admin@ifortisol.com | Phone: 416-613-1927</p>
-    </footer>
 </body>
 </html>

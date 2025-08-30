@@ -1,31 +1,40 @@
-let slideIndex = 0;
-const slides = document.getElementsByClassName("slide");
+// Simple fade carousel (no dependencies)
+(function(){
+  const root = document.querySelector('.hero-carousel');
+  if(!root) return;
+  const slides = [...root.querySelectorAll('.hero-slide')];
+  const prev = root.querySelector('.prev');
+  const next = root.querySelector('.next');
+  const dotsWrap = root.querySelector('.hero-dots');
 
-function showSlidesAuto() {
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlidesAuto, slideIndex === 1 ? 8000 : 4000);
-}
+  let i = 0, timer;
 
-function plusSlides(n) {
-    showSlide(slideIndex += n);
-}
+  function go(n){
+    slides[i].classList.remove('is-active');
+    dotsWrap.children[i]?.setAttribute('aria-current','false');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('is-active');
+    dotsWrap.children[i]?.setAttribute('aria-current','true');
+    restart();
+  }
 
-function showSlide(n) {
-    if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length; }
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
-}
+  function restart(){
+    clearInterval(timer);
+    timer = setInterval(()=>go(i+1), 5000);
+  }
 
-window.onload = function () {
-    showSlidesAuto();
-    document.querySelector(".prev").addEventListener("click", () => plusSlides(-1));
-    document.querySelector(".next").addEventListener("click", () => plusSlides(1));
-};
+  // dots
+  slides.forEach((_, idx)=>{
+    const b = document.createElement('button');
+    b.setAttribute('aria-current', idx===0 ? 'true' : 'false');
+    b.addEventListener('click', ()=>go(idx));
+    dotsWrap.appendChild(b);
+  });
+
+  prev.addEventListener('click', ()=>go(i-1));
+  next.addEventListener('click', ()=>go(i+1));
+  root.addEventListener('mouseenter', ()=>clearInterval(timer));
+  root.addEventListener('mouseleave', restart);
+
+  restart();
+})();

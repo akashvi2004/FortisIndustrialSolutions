@@ -1,110 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Fortis Industrial Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-    nav ul {
-      position: relative;
-    }
-    nav ul li {
-      position: relative;
-    }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background-color: #006600;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      min-width: 220px;
-      top: 100%;
-      left: 0;
-      z-index: 1000;
-    }
-    .dropdown-menu li {
-      border-bottom: 1px solid #004d00;
-    }
-    .dropdown-menu li a {
-      display: block;
-      padding: 10px;
-      color: white;
-      text-decoration: none;
-    }
-    .dropdown:hover > .dropdown-menu {
-      display: block;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Fortis Industrial Solutions</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-          <img src="images/LOGO Final.jpg" alt="Fortis Logo" class="logo-img">
-          <span>Fortis Industrial Solutions</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li class="dropdown">
-                    <a href="services.html">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="design.html" target="_blank">Design and Engineering</a></li>
-                        <li><a href="fabrication.html" target="_blank">Fabrication</a></li>
-                        <li><a href="passivation.html" target="_blank">Cleaning and Passivation</a></li>
-                        <li><a href="polishing.html" target="_blank">Polishing and Surface Coating</a></li>
-                    </ul>
-                </li>
-                <li><a href="industry.html">Industry Applications</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="resources.html">Resources & Blog</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-      <div class="page-wrapper">
-        <section class="about">
-          <h1>About Us</h1>
-          <p>Fortis Industrial Solutions is a proudly 100% Canadian-owned company with over 20 years of hands-on experience delivering premium-quality industrial fabrication and surface treatment solutions. Our team is dedicated to helping clients achieve operational excellence through innovative engineering, rigorous quality standards, and industry-leading expertise.</p>
-
-          <h2>Our Mission & Values</h2>
-          <p>Our mission is to uphold integrity, innovation, and excellence in every project we undertake. We believe that strong relationships are built on transparency, reliability, and performance — and we embed these values into every weld, polish, and process we deliver.</p>
-          <p>We are committed to environmental responsibility, safe working practices, and continuous learning, ensuring that our solutions are not just effective today, but sustainable for the future.</p>
-
-          <h2>Experience</h2>
-          <p>Over the last two decades, Fortis Fabrication has evolved from a small fabrication team into a multidisciplinary operation serving industries such as pharmaceuticals, food & beverage, biotechnology, and chemical manufacturing.</p>
-          <p>Our experience spans a wide range of services including:</p>
-          <ul>
-            <li>Custom stainless steel tank and skid fabrication</li>
-            <li>CAD-driven design and engineering support</li>
-            <li>High-purity welding (TIG, orbital)</li>
-            <li>Electropolishing, mechanical polishing, and surface preparation</li>
-            <li>On-site and in-house passivation services</li>
-            <li>Regulatory documentation and quality compliance (ASME, CRN, TSSA)</li>
-          </ul>
-
-          <h2>Certifications & Memberships</h2>
-          <p>We operate under the highest standards of safety and regulatory compliance. Our team is certified and trained to deliver services that meet national and international benchmarks for quality and performance.</p>
-          <ul>
-            <li><strong>ASME Certification:</strong> Pressure vessel and process piping fabrication under Section VIII and IX standards.</li>
-            <li><strong>TSSA Registration:</strong> Compliant with Ontario safety requirements for high-pressure systems and regulated equipment.</li>
-            <li><strong>CRN Approval:</strong> Canadian Registration Numbers for design and fabrication of pressure-retaining components.</li>
-            <li><strong>Memberships:</strong> Active member of Canadian Manufacturing Associations and clean manufacturing initiatives.</li>
-          </ul>
-          <p>We believe that compliance isn't a checkbox — it's a responsibility we carry into every project we deliver.</p>
-        </section>
+<div id="top"></div> 
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/LOGO Final.jpg" alt="Fortis Logo" class="logo-img">
+      <div class="logo-text">
+        <h1>Fortis</h1>
+        <p>Industrial Solutions</p>
       </div>
-    </main>
+    </div>
 
+    <nav>
+      <ul class="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
 
-    <footer>
-        <p>&copy; 2025 Fortis Industrial Solutions</p>
-        <p>Contact: admin@ifortisol.com | Phone: 416-613-1927</p>
-    </footer>
+        <li class="dropdown">
+          <a href="services.html">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="design.html">Design & Engineering</a></li>
+            <li><a href="fabrication.html">Fabrication</a></li>
+            <li><a href="passivation.html">Cleaning & Passivation</a></li>
+            <li><a href="polishing.html">Polishing & Surface Coating</a></li>
+          </ul>
+        </li>
+
+        <li><a href="industry.html">Industry Applications</a></li>
+        <!-- removed per plan: Certifications / Resources links -->
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-wrapper">
+      <section class="about">
+        <h1>About Us</h1>
+        <p>Fortis Industrial Solutions is a proudly 100% Canadian-owned company with over 20 years of hands-on experience delivering premium-quality industrial fabrication and surface treatment solutions. Our team is dedicated to helping clients achieve operational excellence through innovative engineering, rigorous quality standards, and industry-leading expertise.</p>
+
+        <h2>Our Mission & Values</h2>
+        <p>Our mission is to uphold integrity, innovation, and excellence in every project we undertake. We believe that strong relationships are built on transparency, reliability, and performance — and we embed these values into every weld, polish, and process we deliver.</p>
+        <p>We are committed to environmental responsibility, safe working practices, and continuous learning, ensuring that our solutions are not just effective today, but sustainable for the future.</p>
+
+        <h2>Experience</h2>
+        <p>Over the last two decades, Fortis Fabrication has evolved from a small fabrication team into a multidisciplinary operation serving industries such as pharmaceuticals, food & beverage, biotechnology, and chemical manufacturing.</p>
+        <p>Our experience spans a wide range of services including:</p>
+        <ul>
+          <li>Custom stainless steel tank and skid fabrication</li>
+          <li>CAD-driven design and engineering support</li>
+          <li>High-purity welding (TIG, orbital)</li>
+          <li>Electropolishing, mechanical polishing, and surface preparation</li>
+          <li>On-site and in-house passivation services</li>
+          <li>Regulatory documentation and quality compliance (ASME, CRN, TSSA)</li>
+        </ul>
+
+        <h2>Certifications & Memberships</h2>
+        <p>We operate under the highest standards of safety and regulatory compliance. Our team is certified and trained to deliver services that meet national and international benchmarks for quality and performance.</p>
+        <ul>
+          <li><strong>ASME Certification:</strong> Pressure vessel and process piping fabrication under Section VIII and IX standards.</li>
+          <li><strong>TSSA Registration:</strong> Compliant with Ontario safety requirements for high-pressure systems and regulated equipment.</li>
+          <li><strong>CRN Approval:</strong> Canadian Registration Numbers for design and fabrication of pressure-retaining components.</li>
+          <li><strong>Memberships:</strong> Active member of Canadian Manufacturing Associations and clean manufacturing initiatives.</li>
+        </ul>
+        <p>We believe that compliance isn't a checkbox — it's a responsibility we carry into every project we deliver.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="foot-inner">
+      <div>
+        <p><strong>Contact:</strong></p>
+        <p>
+          <a href="mailto:sales@ifortisol.com">sales@ifortisol.com</a><br>
+          <a href="tel:4166131927">416-613-1927</a>
+        </p>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2025 Fortis Industrial Solutions</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
