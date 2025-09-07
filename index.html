@@ -12,15 +12,24 @@
 <body>    
 <div id="top"></div> 
 <header class="site-header">
-  <div class="logo">
-    <img src="images/LOGO Final.jpg" alt="Fortis Logo" class="logo-img">
-    <div class="logo-text">
-      <h1>Fortis</h1>
-      <p>Industrial Solutions</p>
+  <!-- Row 1: centered logo + CTA -->
+  <div class="header-top">
+    <div class="logo">
+      <a href="index.html" class="logo-link" aria-label="Fortis Industrial Solutions Home">
+        <img src="images/High-Resolution-Color-Logo.png" alt="Fortis Logo" class="logo-img">
+        <div class="logo-text">
+          <h1>Fortis</h1>
+          <p>Industrial Solutions</p>
+        </div>
+      </a>
     </div>
+
+    <a class="header-cta" href="contact.html">Request a Quote</a>
+    <!-- or use: <a class="header-cta" href="contact.html">Contact Us</a> -->
   </div>
 
-  <nav>
+  <!-- Row 2: full nav in its own line -->
+  <nav class="header-nav">
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -40,6 +49,8 @@
     </ul>
   </nav>
 </header>
+
+
 <section class="hero-carousel" id="hero">
   <div class="hero-slide is-active">
     <img src="images/Industries/something.jpg" alt="Process systems">

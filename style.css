@@ -1,5 +1,8 @@
+/* ===========================
+   Base / Defaults
+   =========================== */
 html { scroll-behavior: smooth; }
-:target { scroll-margin-top: 80px; }
+:target { scroll-margin-top: 120px; } /* taller sticky header offset */
 
 body {
   margin: 0;
@@ -13,7 +16,7 @@ section { margin-bottom: 40px; }
 h2 { color: #006600; }
 
 /* ===========================
-   Header / Logo / Nav
+   Header (2-row layout)
    =========================== */
 .site-header {
   position: sticky;
@@ -21,39 +24,65 @@ h2 { color: #006600; }
   z-index: 9999;
   background: #003000;
   display: flex;
+  flex-direction: column;     /* two rows */
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 0 20px;
+  padding: 8px 20px 0;        /* top row padding; nav row has its own */
+  box-shadow: 0 4px 12px rgba(0,0,0,.18);
 }
 
-.logo {
+/* Row 1: centered logo + CTA */
+.header-top {
+  width: 100%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 0;
-}
-.logo-img { height: 48px; width: auto; }
-.logo-text h1 {
-  margin: 0; font-size: 1.4rem; font-weight: 700; color: #fff; line-height: 1.2;
-}
-.logo-text p {
-  margin: 0; font-size: 0.85rem; color: #cfe6d2; line-height: 1.2;
+  justify-content: center;    /* center the logo + CTA together */
+  gap: 16px;
+  padding: 6px 0 8px;
 }
 
-/* nav list */
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-link { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.logo-img { height: 64px; width: auto; }
+.logo-text h1 { margin: 0; font-size: 1.8rem; font-weight: 700; color: #fff; line-height: 1.2; }
+.logo-text p  { margin: 0; font-size: 1rem;  color: #cfe6d2; line-height: 1.2; }
+
+/* CTA beside logo */
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  background: #0b4f17;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.header-cta:hover { background: #083a11; }
+
+/* Row 2: full nav centered on its own line */
+.header-nav {
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding: 6px 0 8px;
+}
+
+/* Nav list */
 .main-nav {
   display: flex;
+  justify-content: center;    /* center nav row */
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-wrap: wrap;               /* allow wrap on smaller widths */
+  flex-wrap: wrap;
 }
 .main-nav > li > a {
   color: #fff; text-decoration: none; font-weight: bold;
-  padding: 10px 12px; display: inline-block;
+  padding: 12px 14px; display: inline-block;
 }
 .main-nav > li > a:hover { text-decoration: underline; }
 
@@ -64,7 +93,7 @@ h2 { color: #006600; }
   position: absolute;
   left: 0;
   top: calc(100% + 6px);
-  background: #6fbf73;         
+  background: #6fbf73;
   color: #111;
   list-style: none;
   margin: 0;
@@ -75,7 +104,9 @@ h2 { color: #006600; }
   box-shadow: 0 10px 30px rgba(0,0,0,.12);
   z-index: 10000;
 }
-.dropdown:hover .dropdown-menu { display: block; }
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu { display: block; }  /* keyboard/tap friendly */
+
 .dropdown-menu li { border-bottom: 1px solid #e7f3e8; }
 .dropdown-menu li:last-child { border-bottom: none; }
 .dropdown-menu a {
@@ -83,8 +114,19 @@ h2 { color: #006600; }
 }
 .dropdown-menu a:hover { background: #cfe6d2; }
 
+/* Focus rings (accessibility) */
+.logo-link:focus,
+.header-cta:focus,
+.main-nav a:focus,
+.hero-nav:focus,
+.hero-dots button:focus {
+  outline: 2px solid #cfe6d2;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 /* ===========================
-   Hero Carousel (Option A)
+   Hero Carousel
    =========================== */
 .hero-carousel { position: relative; height: 58vh; min-height: 420px; max-height: 720px; overflow: hidden; }
 .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
@@ -119,10 +161,12 @@ h2 { color: #006600; }
 .hero-dots button {
   width:10px; height:10px; border-radius:50%; border:0; background: rgba(255,255,255,.55); cursor:pointer;
 }
-.hero-dots button[aria-current="true"] { background: #fff; }
+/* support either aria-current or aria-selected depending on JS version */
+.hero-dots button[aria-current="true"],
+.hero-dots button[aria-selected="true"] { background: #fff; }
 
 /* ===========================
-   Grids / Wrappers / Content
+   Content Wrappers / Grids
    =========================== */
 .page-wrapper { max-width: 1000px; margin: 0 auto; text-align: center; }
 .page-wrapper img { max-width: 100%; height: auto; }
@@ -144,7 +188,7 @@ h2 { color: #006600; }
 .market-item:hover { box-shadow: 0 0 10px rgba(0, 102, 0, 0.3); }
 .market-item p { margin-top: 10px; font-weight: bold; color: #003300; }
 
-/* CTA */
+/* CTA (generic) */
 .cta a {
   display: inline-block;
   padding: 10px 20px;
@@ -189,61 +233,64 @@ footer { background-color: #003300; color: white; text-align: center; padding: 2
 }
 
 /* ===========================
+   Motion Preferences
+   =========================== */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { transition: none; }
+  .hero-nav, .hero-dots button { transition: none; }
+}
+
+/* ===========================
    Responsive Media Queries
    =========================== */
 
-/* --- Large tablets / small laptops (<= 1024px) --- */
+/* <= 1024px */
 @media (max-width: 1024px) {
-  .logo-img { height: 44px; }
-  .logo-text h1 { font-size: 1.25rem; }
-  .logo-text p { font-size: 0.82rem; }
-
-  .main-nav { gap: 14px; }
+  .logo-img { height: 56px; }
+  .logo-text h1 { font-size: 1.5rem; }
+  .logo-text p  { font-size: 0.92rem; }
+  .main-nav { gap: 16px; }
   .dropdown-menu { min-width: 260px; }
 }
 
-/* --- Tablets (<= 900px) --- */
+/* <= 900px */
 @media (max-width: 900px) {
-  .site-header { padding: 6px 16px; }
-  .logo { gap: 8px; }
-  .logo-img { height: 40px; }
-  .logo-text h1 { font-size: 1.15rem; }
-  .logo-text p { font-size: 0.8rem; }
-
-  .main-nav { gap: 12px; }
-  .main-nav > li > a { padding: 8px 10px; }
-
+  .logo-img { height: 52px; }
+  .logo-text h1 { font-size: 1.35rem; }
+  .logo-text p  { font-size: 0.88rem; }
+  .main-nav > li > a { padding: 10px 12px; }
   .bottom { flex-direction: column; align-items: flex-start; }
 }
 
-/* --- Large phones / small tablets (<= 680px) --- */
+/* <= 680px */
 @media (max-width: 680px) {
-  /* Let header wrap to two lines if needed, without breaking layout */
-  .site-header { flex-wrap: wrap; row-gap: 6px; }
-  .main-nav { width: 100%; justify-content: center; flex-wrap: wrap; gap: 10px; }
-  .main-nav > li > a { padding: 8px 8px; font-size: 0.95rem; }
+  .header-top { flex-wrap: wrap; row-gap: 8px; }      /* let CTA drop under logo if needed */
+  .logo-img { height: 48px; }
+  .logo-text h1 { font-size: 1.25rem; }
+  .logo-text p  { font-size: 0.85rem; }
+  .header-cta { padding: 8px 12px; font-size: 0.95rem; }
 
-  /* Dropdown: narrower on small screens */
+  .main-nav { width: 100%; justify-content: center; flex-wrap: wrap; gap: 10px; }
+  .main-nav > li > a { padding: 8px 10px; font-size: 0.95rem; }
+
   .dropdown-menu { min-width: 220px; }
 
-  /* Hero height a bit smaller so content shows */
   .hero-carousel { height: 52vh; min-height: 360px; }
   .hero-overlay p { font-size: clamp(14px, 2.4vw, 17px); }
 
-  /* Google Form embeds often need more height */
-  .quote-form iframe { height: 1000px; }
+  .quote-form iframe { height: 1000px; } /* if embedding Google Form */
 }
 
-/* --- Phones (<= 480px) --- */
+/* <= 480px */
 @media (max-width: 480px) {
-  .logo-img { height: 36px; }
-  .logo-text h1 { font-size: 1.05rem; }
-  .logo-text p { font-size: 0.78rem; }
+  .logo-img { height: 42px; }
+  .logo-text h1 { font-size: 1.1rem; }
+  .logo-text p  { font-size: 0.82rem; }
 
   .main-nav { gap: 8px; }
   .main-nav > li > a { padding: 7px 8px; font-size: 0.93rem; }
 
-  .market-grid { grid-template-columns: 1fr 1fr; } /* 2-up grid on very small screens */
+  .market-grid { grid-template-columns: 1fr 1fr; }  /* 2-up grid on very small screens */
   .hero-carousel { min-height: 320px; }
 
   main { padding: 16px; }

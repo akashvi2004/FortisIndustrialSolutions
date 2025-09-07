@@ -3,41 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Design & Engineering – Fortis Industrial Solutions</title>
+  <title>Design  – Fortis Industrial Solutions</title>
   <meta name="description" content="Explore Fortis Industrial Solutions' design and engineering services, including CAD modeling, 3D rendering, and custom stainless steel solutions. Tailored designs for food, pharmaceutical, and biotech industries.">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div id="top"></div> 
-  <header class="site-header">
+<header class="site-header">
+  <!-- Row 1: centered logo + CTA -->
+  <div class="header-top">
     <div class="logo">
-      <img src="images/LOGO Final.jpg" alt="Fortis Logo" class="logo-img">
-      <div class="logo-text">
-        <h1>Fortis</h1>
-        <p>Industrial Solutions</p>
-      </div>
+      <a href="index.html" class="logo-link" aria-label="Fortis Industrial Solutions Home">
+        <img src="images/High-Resolution-Color-Logo.png" alt="Fortis Logo" class="logo-img">
+        <div class="logo-text">
+          <h1>Fortis</h1>
+          <p>Industrial Solutions</p>
+        </div>
+      </a>
     </div>
 
-    <nav>
-      <ul class="main-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
+    <a class="header-cta" href="contact.html">Request a Quote</a>
+    <!-- or use: <a class="header-cta" href="contact.html">Contact Us</a> -->
+  </div>
 
-        <li class="dropdown">
-          <a href="services.html">Services</a>
-          <ul class="dropdown-menu">
-            <li><a href="design.html">Design & Engineering</a></li>
-            <li><a href="fabrication.html">Fabrication</a></li>
-            <li><a href="passivation.html">Cleaning & Passivation</a></li>
-            <li><a href="polishing.html">Polishing & Surface Coating</a></li>
-          </ul>
-        </li>
+  <!-- Row 2: full nav in its own line -->
+  <nav class="header-nav">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
 
-        <li><a href="industry.html">Industry Applications</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+      <li class="dropdown">
+        <a href="services.html">Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="design.html" target="_blank">Design & Engineering</a></li>
+          <li><a href="fabrication.html" target="_blank">Fabrication</a></li>
+          <li><a href="passivation.html" target="_blank">Cleaning & Passivation</a></li>
+          <li><a href="polishing.html" target="_blank">Polishing & Surface Coating</a></li>
+        </ul>
+      </li>
+
+      <li><a href="industry.html">Industry Applications</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main>
     <div class="page-wrapper">
