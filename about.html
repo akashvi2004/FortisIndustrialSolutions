@@ -10,41 +10,29 @@
 
 <body>
 <div id="top"></div> 
-  <header class="site-header">
-  <!-- Row 1: centered logo + CTA -->
-  <div class="header-top">
-    <div class="logo">
-      <a href="index.html" class="logo-link" aria-label="Fortis Industrial Solutions Home">
-        <img src="images/High-Resolution-Color-Logo.png" alt="Fortis Logo" class="logo-img">
-        <div class="logo-text">
-          <h1>Fortis</h1>
-          <p>Industrial Solutions</p>
-        </div>
-      </a>
-    </div>
+<header class="site-header" role="banner">
+  <a href="index.html" class="logo-link logo-abs" aria-label="Fortis Industrial Solutions Home">
+    <img src="images/High-Resolution-Logo-White-on-Transparent-Background.png"
+         alt="Fortis Industrial Solutions logo" class="logo-img" />
+    <span class="sr-only">Fortis Industrial Solutions</span>
+  </a>
 
-    <a class="header-cta" href="contact.html">Request a Quote</a>
-    <!-- or use: <a class="header-cta" href="contact.html">Contact Us</a> -->
-  </div>
-
-  <!-- Row 2: full nav in its own line -->
-  <nav class="header-nav">
+  <nav class="header-nav" aria-label="Primary">
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-
       <li class="dropdown">
         <a href="services.html">Services</a>
         <ul class="dropdown-menu">
-          <li><a href="design.html" target="_blank">Design & Engineering</a></li>
-          <li><a href="fabrication.html" target="_blank">Fabrication</a></li>
-          <li><a href="passivation.html" target="_blank">Cleaning & Passivation</a></li>
-          <li><a href="polishing.html" target="_blank">Polishing & Surface Coating</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="fabrication.html">Fabrication</a></li>
+          <li><a href="passivation.html">Cleaning &amp; Passivation</a></li>
+          <li><a href="polishing.html">Polishing &amp; Surface Coating</a></li>
         </ul>
       </li>
-
       <li><a href="industry.html">Industry Applications</a></li>
       <li><a href="contact.html">Contact Us</a></li>
+      <li><a class="header-cta" href="contact.html">Request a Quote</a></li>
     </ul>
   </nav>
 </header>
@@ -99,5 +87,12 @@
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
+
+  
+    <a class="edge-badge" href="contact.html" aria-label="Certifications in progress">
+      <h4>Certifications:</h4>
+      ASME &amp; TSSA<br><span>In progress</span>
+    </a>
+
 </body>
 </html>

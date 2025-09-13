@@ -11,45 +11,32 @@
 
 <body>    
 <div id="top"></div> 
-<header class="site-header">
-  <!-- Row 1: centered logo + CTA -->
-  <div class="header-top">
-    <div class="logo">
-      <a href="index.html" class="logo-link" aria-label="Fortis Industrial Solutions Home">
-        <img src="images/High-Resolution-Color-Logo.png" alt="Fortis Logo" class="logo-img">
-        <div class="logo-text">
-          <h1>Fortis</h1>
-          <p>Industrial Solutions</p>
-        </div>
-      </a>
-    </div>
+<header class="site-header" role="banner">
+  <a href="index.html" class="logo-link logo-abs" aria-label="Fortis Industrial Solutions Home">
+    <img src="images/High-Resolution-Logo-White-on-Transparent-Background.png"
+         alt="Fortis Industrial Solutions logo" class="logo-img" />
+    <span class="sr-only">Fortis Industrial Solutions</span>
+  </a>
 
-    <a class="header-cta" href="contact.html">Request a Quote</a>
-    <!-- or use: <a class="header-cta" href="contact.html">Contact Us</a> -->
-  </div>
-
-  <!-- Row 2: full nav in its own line -->
-  <nav class="header-nav">
+  <nav class="header-nav" aria-label="Primary">
     <ul class="main-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
-
       <li class="dropdown">
         <a href="services.html">Services</a>
         <ul class="dropdown-menu">
-          <li><a href="design.html" target="_blank">Design</a></li>
-          <li><a href="fabrication.html" target="_blank">Fabrication</a></li>
-          <li><a href="passivation.html" target="_blank">Cleaning & Passivation</a></li>
-          <li><a href="polishing.html" target="_blank">Polishing & Surface Coating</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="fabrication.html">Fabrication</a></li>
+          <li><a href="passivation.html">Cleaning &amp; Passivation</a></li>
+          <li><a href="polishing.html">Polishing &amp; Surface Coating</a></li>
         </ul>
       </li>
-
       <li><a href="industry.html">Industry Applications</a></li>
       <li><a href="contact.html">Contact Us</a></li>
+      <li><a class="header-cta" href="contact.html">Request a Quote</a></li>
     </ul>
   </nav>
 </header>
-
 
 <section class="hero-carousel" id="hero">
   <div class="hero-slide is-active">
@@ -112,108 +99,115 @@
           <div class="market-item">
               <p>Chemical Manufacturing & Distribution</p>
           </div>
+          <div class="market-item"><p>Dairy (CIP/Sanitary)</p></div>
+          <div class="market-item"><p>Nuclear Industry</p></div>
+          <div class="market-item"><p>Fabrication Shops</p></div>
       </div>
       </section>
 
+    <section class="featured">
+      <h2>Featured Services</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3><a href="passivation.html">Cleaning &amp; Passivation</a></h3>
+          <p>Validated stainless treatments for sanitary and critical service.</p>
+          <a class="svc-cta" href="passivation.html">Learn more</a>
+        </article>
 
-      <section class="featured">
-        <h2>Featured Services</h2>
-        <div class="market-grid">
-          <div class="market-item">
-            <p><a href="passivation.html" target="_blank">Cleaning and Passivation</a></p>
-          </div>
-          <div class="market-item">
-            <p><a href="design.html" target="_blank">Design</a></p>
-          </div>
-          <div class="market-item">
-            <p><a href="polishing.html" target="_blank">Polishing and Surface Coating</a></p>
-          </div>
-          <div class="market-item">
-            <p><a href="fabrication.html" target="_blank">Fabrication</a></p>
-          </div>
+        <article class="service-card">
+          <h3><a href="design.html">Design</a></h3>
+          <p>CAD, layout, and DFM to hit spec and shorten lead times.</p>
+          <a class="svc-cta" href="design.html">Learn more</a>
+        </article>
+
+        <article class="service-card">
+          <h3><a href="polishing.html">Polishing &amp; Surface Coating</a></h3>
+          <p>Grain and mirror finishes; coatings for durability and hygiene.</p>
+          <a class="svc-cta" href="polishing.html">Learn more</a>
+        </article>
+
+        <article class="service-card">
+          <h3><a href="fabrication.html">Fabrication</a></h3>
+          <p>Tanks, skids, and process piping — built clean and on time.</p>
+          <a class="svc-cta" href="fabrication.html">Learn more</a>
+        </article>
+      </div>
+    </section>
+    <section class="materials">
+      <h2>Materials We Deal With</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>304 Stainless Steel</h3>
+          <p>The most widely used stainless steel, offering excellent corrosion resistance, strength, and formability. Ideal for tanks, piping, and general process equipment.</p>
         </div>
-      </section>
-<!--At *Fortis Industrial Solutions*, we work exclusively with high-quality materials to ensure durability, performance, and compliance with industry standards:
-
-* *304 Stainless Steel* – The most widely used stainless steel, offering excellent corrosion resistance, strength, and formability. Ideal for tanks, piping, and general process equipment.
-* *316 & 316L Stainless Steel* – Known for superior resistance to chemicals, chlorides, and acidic environments. The low-carbon version (316L) minimizes carbide precipitation, making it perfect for welded assemblies and sanitary applications.
-* *Specialty Alloys* – For demanding projects that require enhanced strength, heat resistance, or corrosion protection beyond standard grades. We source and fabricate with alloys tailored to your process needs.
-* *Food-Grade & Pharmaceutical-Grade Materials* – All materials are carefully selected and finished to meet strict hygiene, safety, and regulatory requirements, ensuring compliance with FDA, USDA, and GMP standards.
-
-Our commitment is to provide materials that meet both functional and regulatory expectations, supporting safe and reliable operations across the food, beverage, pharmaceutical, and industrial sectors.-->
-      <section class="materials">
-          <h2>Materials We Deal With</h2>
-          <ul>
-              <li>
-                <strong>304Stainless Steel</strong><br>
-                The most widely used stainless steel, offering excellent corrosion resistance, strength, and formability. Ideal for tanks, piping, and general process equipment.
-              </li>
-              <li>
-                <strong>316, 316L Stainless Steel</strong><br>
-                Known for superior resistance to chemicals, chlorides, and acidic environments. The low-carbon version (316L) minimizes carbide precipitation, making it perfect for welded assemblies and sanitary applications.
-              </li>
-              <li>
-                <strong>Specialty Alloys</strong><br>
-                For demanding projects that require enhanced strength, heat resistance, or corrosion protection beyond standard grades. We source and fabricate with alloys tailored to your process needs.
-              </li>
-              <li>
-                <strong>Food-Grade and Pharmaceutical-Grade Materials</strong><br>
-                All materials are carefully selected and finished to meet strict hygiene, safety, and regulatory requirements, ensuring compliance with FDA, USDA, and GMP standards.
-              </li>
-          </ul>
-      </section>
-
-      <section class="stakeholders">
-          <h2>Stakeholders We Work With</h2>
-          <p>At Fortis Industrial Solutions, we collaborate with a diverse range of industry professionals to ensure every project is executed with precision and meets the highest standards.</p>
-          <ul class="stakeholder-list">
-              <li>
-                  <strong>Engineers:</strong><br>
-                  We assist mechanical, process, and design engineers by providing technical insights, CAD integration, and custom solutions tailored to unique specifications.
-              </li>
-              <li>
-                  <strong>Procurement Specialists:</strong><br>
-                  Our team works closely with buyers and sourcing agents to streamline quotes, ensure compliance, and meet delivery timelines without compromising quality.
-              </li>
-              <li>
-                  <strong>Plant Managers & Supervisors:</strong><br>
-                  We support day-to-day operations by offering equipment that enhances production efficiency, adheres to safety standards, and minimizes downtime.
-              </li>
-              <li>
-                  <strong>Project Managers:</strong><br>
-                  From initial scope to final commissioning, we offer transparent communication, progress updates, and flexible coordination to meet deadlines and budget goals.
-              </li>
-              <li>
-                  <strong>Quality Assurance Teams:</strong><br>
-                  We provide documentation, testing reports, and certifications (ASME, CRN, TSSA) to ensure our work meets your compliance and traceability requirements.
-              </li>
-          </ul>
-
-          <p>Our goal is to become an extension of your team — offering not just products, but partnership, technical expertise, and long-term value.</p>
-      </section>
-
-      <section class="cta">
-          <a href="contact.html">Request a Quote</a>
-      </section>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="foot-inner">
-      <div>
-        <p><strong>Contact:</strong></p>
-        <p>
-          <a href="mailto:sales@ifortisol.com">sales@ifortisol.com</a><br>
-          <a href="tel:4166131927">416-613-1927</a>
-        </p>
+        <div class="timeline-item">
+          <h3>316 &amp; 316L Stainless Steel</h3>
+          <p>Superior resistance to chemicals, chlorides, and acidic environments. The low-carbon version (316L) minimizes carbide precipitation, making it perfect for sanitary welded assemblies.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Specialty Alloys</h3>
+          <p>For demanding projects that require enhanced strength, heat resistance, or corrosion protection. We source and fabricate with alloys tailored to your process needs.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Food-Grade &amp; Pharmaceutical-Grade</h3>
+          <p>Carefully selected and finished to meet strict hygiene, safety, and regulatory requirements (FDA, USDA, GMP), ensuring compliance for critical industries.</p>
+        </div>
       </div>
-    </div>
-    <div class="bottom">
-      <span>© 2025 Fortis Industrial Solutions</span>
-      <a href="#top">Back to top ↑</a>
-    </div>
-</footer>
+    </section>
 
+    <section class="stakeholders">
+      <h2>Stakeholders We Work With</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Engineers</h3>
+          <p>We assist mechanical, process, and design engineers with CAD integration and technical insights.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Procurement Specialists</h3>
+          <p>We streamline quotes, ensure compliance, and align with your delivery schedules.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Plant Managers &amp; Supervisors</h3>
+          <p>Our solutions improve efficiency, adhere to safety standards, and minimize downtime.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Project Managers</h3>
+          <p>We provide transparent updates and flexible coordination to meet deadlines and budgets.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Quality Assurance Teams</h3>
+          <p>Full documentation, reports, and certifications (ASME, CRN, TSSA) for compliance and traceability.</p>
+        </div>
+      </div>
+    </section>
+
+
+          <section class="cta">
+              <a href="contact.html">Request a Quote</a>
+          </section>
+        </div>
+      </main>
+
+    <footer class="site-footer">
+      <div class="foot-inner">
+        <div>
+          <p><strong>Contact:</strong></p>
+          <p>
+            <a href="mailto:sales@ifortisol.com">sales@ifortisol.com</a><br>
+            <a href="tel:4166131927">416-613-1927</a>
+          </p>
+        </div>
+      </div>
+      <div class="bottom">
+        <span>© 2025 Fortis Industrial Solutions</span>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+    
+    <a class="edge-badge" href="contact.html" aria-label="Certifications in progress">
+      <h4>Certifications:</h4>
+      ASME &amp; TSSA<br><span>In progress</span>
+    </a>
 
 </body>
 </html>

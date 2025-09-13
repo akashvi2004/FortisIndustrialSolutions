@@ -24,4 +24,7 @@
     <loc>https://ifortisol.com/contact</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://ifortisol.com/passivation</loc>
+    <priority>0.7</priority>
 </urlset>
