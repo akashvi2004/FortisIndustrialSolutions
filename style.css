@@ -413,3 +413,15 @@ footer { background-color: #003300; color: white; text-align: center; padding: 2
 @media (max-width: 900px) {
   .edge-badge { display: none; } /* hide badge on mobile */
 }
+.about-page main ul,
+.about-page main ol {
+  display: inline-block;     /* shrink list to content */
+  text-align: left;          /* align bullets and text inside list */
+  list-style-position: outside;
+  margin: 0 auto 1rem;       /* center the whole block */
+  padding-left: 1.5rem;      /* space for bullets */
+}
+
+.about-page main li {
+  margin: .4rem 0;
+}
