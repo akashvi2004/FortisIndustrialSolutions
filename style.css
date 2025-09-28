@@ -496,6 +496,70 @@ main li > ol { list-style-type: lower-alpha; margin: .3rem 0 .6rem 1.2rem; }
   .form-embed iframe, .quote-form iframe { min-height: 1500px; }
 }
 
+/* Hide hamburger on desktop */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Show on small screens */
+@media (max-width: 680px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Hide nav by default */
+  .header-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #003000;
+    padding: 20px;
+  }
+
+  /* Show nav when open */
+  .header-nav.is-open {
+    display: block;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .main-nav > li > a {
+    display: block;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .dropdown .dropdown-menu {
+    position: static;
+    background: #024a02;
+    border: none;
+    box-shadow: none;
+    padding-left: 16px;
+    margin-top: 8px;
+    display: none;
+  }
+
+  .dropdown.is-open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown .dropdown-menu a {
+    color: #fff;
+    padding: 10px;
+  }
+}
+
 /* ===========================
    End of style.css
    =========================== */

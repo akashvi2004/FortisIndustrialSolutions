@@ -91,29 +91,13 @@
   <h4>Certifications:</h4>
   ASME &amp; TSSA<br><span>In progress</span>
 </a>
-
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  const isPhone = () => window.matchMedia('(max-width: 680px)').matches;
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.header-nav');
 
-  document.querySelectorAll('.main-nav .dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e){
-      if (isPhone()) {
-        const li = this.parentElement;
-
-        if (!li.classList.contains('is-open')) {
-          // first tap → open dropdown, block navigation
-          e.preventDefault();
-          li.classList.add('is-open');
-
-          // close other open dropdowns
-          li.parentElement.querySelectorAll('.dropdown.is-open').forEach(sib=>{
-            if (sib !== li) sib.classList.remove('is-open');
-          });
-        } 
-        // second tap → no preventDefault, so it navigates to services.html
-      }
-    });
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('is-open');
   });
 });
 </script>

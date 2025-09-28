@@ -54,6 +54,8 @@
         <p><strong>Business Hours:</strong> Mon–Fri, 9AM–6PM</p>
         <section class="quote-form">
   <h2>Request a Quote</h2>
+  <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfePjAy014q1CYY47eeZkdqYaWKqykQtfy0tdYcvvT1FIhDMQ/viewform"
+        target="_blank" rel="noopener">Open full form ↗</a></p>
   <div class="form-embed">
     <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSfePjAy014q1CYY47eeZkdqYaWKqykQtfy0tdYcvvT1FIhDMQ/viewform?embedded=true"
@@ -97,26 +99,11 @@
     </a>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  const isPhone = () => window.matchMedia('(max-width: 680px)').matches;
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.header-nav');
 
-  document.querySelectorAll('.main-nav .dropdown > a').forEach(link => {
-    link.addEventListener('click', function(e){
-      if (isPhone()) {
-        const li = this.parentElement;
-
-        if (!li.classList.contains('is-open')) {
-          // first tap → open dropdown, block navigation
-          e.preventDefault();
-          li.classList.add('is-open');
-
-          // close other open dropdowns
-          li.parentElement.querySelectorAll('.dropdown.is-open').forEach(sib=>{
-            if (sib !== li) sib.classList.remove('is-open');
-          });
-        } 
-        // second tap → no preventDefault, so it navigates to services.html
-      }
-    });
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('is-open');
   });
 });
 </script>
