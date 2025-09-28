@@ -101,7 +101,7 @@ ul, ol {
   outline: 0;
 }
 
-/* Dropdown */
+/* Dropdown (desktop defaults) */
 .dropdown > a { padding-right: 26px; }
 .dropdown .dropdown-menu {
   list-style: none;
@@ -393,8 +393,9 @@ footer { background-color: #003300; color: white; text-align: center; padding: 2
 
   .hero-carousel { height: 52vh; min-height: 360px; }
   .hero-overlay p { font-size: clamp(14px, 2.4vw, 17px); }
-  .quote-form iframe { height: 1000px; }
 }
+
+/* Phones */
 @media (max-width: 480px) {
   .logo-img { height: 52px; }
   .main-nav { gap: 8px; }
@@ -403,8 +404,10 @@ footer { background-color: #003300; color: white; text-align: center; padding: 2
   .hero-carousel { min-height: 320px; }
   main { padding: 16px; }
 }
+
+/* Hide the floating badge on mobile */
 @media (max-width: 900px) {
-  .edge-badge { display: none; } /* hide badge on mobile */
+  .edge-badge { display: none; }
 }
 
 /* ===========================
@@ -418,80 +421,76 @@ main ol:not(.main-nav):not(.dropdown-menu) {
   margin: 0 auto 1rem;       /* center the whole list block */
   padding-left: 1.5rem;      /* space for markers */
 }
-
 main ul:not(.main-nav):not(.dropdown-menu) { list-style-type: disc; }
 main ol:not(.main-nav):not(.dropdown-menu) { list-style-type: decimal; }
-
 main li { margin: .4rem 0; }
 main li::marker { color: #0a4d0a; } /* optional tint */
-
-/* Nested lists */
 main li > ul { list-style-type: circle; margin: .3rem 0 .6rem 1.2rem; }
 main li > ol { list-style-type: lower-alpha; margin: .3rem 0 .6rem 1.2rem; }
 
-/* Mobile nav = stacked; submenu becomes an accordion */
+/* ===========================
+   Mobile dropdown: stay on screen and open on tap
+   =========================== */
 @media (max-width: 680px) {
-  .header-nav { width: 100%; }
-  .main-nav {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
-  }
-  .main-nav > li > a { width: 100%; }
+  .dropdown { position: relative; }
 
-  /* Submenu becomes in-flow block (no overflow off-screen) */
-  .dropdown { position: static; }
+  /* hidden by default on mobile; centered under trigger; width clamped */
   .dropdown .dropdown-menu {
-    position: static;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92vw, 360px);
     min-width: 0;
-    width: 100%;
     margin-top: 6px;
-    transform: none;
-    /* hidden by default */
+
     visibility: hidden;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .25s ease, opacity .15s ease;
+    transition: max-height .25s ease, opacity .15s ease, visibility .15s ease;
   }
 
-  /* When parent has .is-open (toggled by JS), show submenu */
+  /* show when .is-open gets toggled by JS */
   .dropdown.is-open .dropdown-menu {
     visibility: visible;
     opacity: 1;
-    max-height: 1000px; /* big enough to reveal content */
+    max-height: 1000px;
   }
 
-  /* Optional: subtle style tweak for mobile submenu */
-  .dropdown .dropdown-menu a {
-    padding: 10px 12px;
-    border-radius: 8px;
-  }
+  /* disable hover-open on touch to avoid sticky hover */
+  .dropdown:hover .dropdown-menu { visibility: hidden; opacity: 0; transform: translateX(-50%); }
 
-  /* Disable the desktop hover-open on mobile (tap only) */
-  .dropdown:hover .dropdown-menu { visibility: hidden; opacity: 0; transform: none; }
+  /* bigger tap targets */
+  .dropdown .dropdown-menu a { padding: 12px; display: block; }
 }
 
+/* No sideways scroll on small screens */
+@media (max-width: 680px) {
+  html, body { overflow-x: hidden; }
+}
 
 /* ===========================
-   Mobile Dropdown Fix
+   Responsive Google Form (embed or plain iframe)
    =========================== */
-@media (max-width: 680px) {
-  .dropdown { position: static; } /* keep it in normal flow */
-
-  .dropdown .dropdown-menu {
-    position: static;            /* no absolute positioning */
-    min-width: 0;                /* remove fixed 260px */
-    width: 100%;                 /* fit full width of parent */
-    margin-top: 6px;
-    box-shadow: none;            /* optional: remove floating shadow on mobile */
-    border: 1px solid #cfded0;   /* optional: lighter mobile border */
-    border-radius: 8px;
-  }
-
-  .dropdown .dropdown-menu a {
-    padding: 12px;               /* bigger tap targets */
-    display: block;
-    width: 100%;
-  }
+.form-embed { width: 100%; max-width: 100%; }
+.form-embed iframe,
+.quote-form iframe {
+  display: block;
+  width: 100% !important;   /* override fixed 640/740px embeds */
+  max-width: 100%;
+  border: 0;
+  height: auto;
+  min-height: 1200px;       /* desktop-ish */
 }
+@media (max-width: 680px) {
+  .form-embed iframe,
+  .quote-form iframe { min-height: 1500px; } /* adjust if your form is long */
+}
+/* ===========================
+   End of style.css
+   =========================== */
+
+
+
+   
