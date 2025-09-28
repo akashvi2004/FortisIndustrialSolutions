@@ -471,3 +471,27 @@ main li > ol { list-style-type: lower-alpha; margin: .3rem 0 .6rem 1.2rem; }
   /* Disable the desktop hover-open on mobile (tap only) */
   .dropdown:hover .dropdown-menu { visibility: hidden; opacity: 0; transform: none; }
 }
+
+
+/* ===========================
+   Mobile Dropdown Fix
+   =========================== */
+@media (max-width: 680px) {
+  .dropdown { position: static; } /* keep it in normal flow */
+
+  .dropdown .dropdown-menu {
+    position: static;            /* no absolute positioning */
+    min-width: 0;                /* remove fixed 260px */
+    width: 100%;                 /* fit full width of parent */
+    margin-top: 6px;
+    box-shadow: none;            /* optional: remove floating shadow on mobile */
+    border: 1px solid #cfded0;   /* optional: lighter mobile border */
+    border-radius: 8px;
+  }
+
+  .dropdown .dropdown-menu a {
+    padding: 12px;               /* bigger tap targets */
+    display: block;
+    width: 100%;
+  }
+}
