@@ -203,7 +203,7 @@ ul, ol {
 .page-wrapper { max-width: 1000px; margin: 0 auto; text-align: center; }
 .page-wrapper img { max-width: 100%; height: auto; }
 
-/* Markets grid (keep as CSS Grid) */
+/* Markets grid */
 .markets h2, .featured h2 {
   text-align: center;
   color: #0a4d0a;
@@ -250,17 +250,15 @@ ul, ol {
    =========================== */
 .featured { padding: 36px 0; background: linear-gradient(135deg,#f9fdf9 0%,#eef7ef 100%); }
 
-/* Use FLEX so the last row centers */
 .services-grid {
   width: min(1100px, 92vw);
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
-  justify-content: center;   /* centers any incomplete last row */
+  justify-content: center;
 }
 
-/* Card */
 .service-card {
   background:#fff;
   border:1px solid #cfded0;
@@ -268,14 +266,12 @@ ul, ol {
   padding:18px 16px 16px;
   box-shadow:0 1px 0 rgba(0,0,0,.03);
   transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-
-  /* fixed, tidy card size for alignment */
-  flex: 0 1 260px;           /* width target; allows wrap */
+  flex: 0 1 260px;
   display: flex;
   flex-direction: column;
-  align-items: center;       /* center children horizontally */
-  text-align: center;        /* center text */
-  min-height: 220px;         /* keeps rows visually even */
+  align-items: center;
+  text-align: center;
+  min-height: 220px;
 }
 .service-card:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,.08); border-color:#8fcf95; }
 
@@ -389,13 +385,9 @@ footer { background-color: #003300; color: white; text-align: center; padding: 2
   .logo-img { height: 60px; }
   .main-nav { width: 100%; justify-content: center; gap: 10px; }
   .main-nav > li > a { padding: 9px 10px; font-weight: 600; }
-  .dropdown .dropdown-menu { min-width: 220px; }
-
   .hero-carousel { height: 52vh; min-height: 360px; }
   .hero-overlay p { font-size: clamp(14px, 2.4vw, 17px); }
 }
-
-/* Phones */
 @media (max-width: 480px) {
   .logo-img { height: 52px; }
   .main-nav { gap: 8px; }
@@ -404,93 +396,106 @@ footer { background-color: #003300; color: white; text-align: center; padding: 2
   .hero-carousel { min-height: 320px; }
   main { padding: 16px; }
 }
-
-/* Hide the floating badge on mobile */
 @media (max-width: 900px) {
   .edge-badge { display: none; }
 }
 
 /* ===========================
-   Unified "About-style" lists (content only)
+   Unified "About-style" lists
    =========================== */
 main ul:not(.main-nav):not(.dropdown-menu),
 main ol:not(.main-nav):not(.dropdown-menu) {
   list-style-position: outside;
-  display: inline-block;     /* shrink list to content width */
-  text-align: left;          /* bullets + text align left */
-  margin: 0 auto 1rem;       /* center the whole list block */
-  padding-left: 1.5rem;      /* space for markers */
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto 1rem;
+  padding-left: 1.5rem;
 }
 main ul:not(.main-nav):not(.dropdown-menu) { list-style-type: disc; }
 main ol:not(.main-nav):not(.dropdown-menu) { list-style-type: decimal; }
 main li { margin: .4rem 0; }
-main li::marker { color: #0a4d0a; } /* optional tint */
+main li::marker { color: #0a4d0a; }
 main li > ul { list-style-type: circle; margin: .3rem 0 .6rem 1.2rem; }
 main li > ol { list-style-type: lower-alpha; margin: .3rem 0 .6rem 1.2rem; }
 
 /* ===========================
-   Mobile dropdown: stay on screen and open on tap
+   Dropdown: clean unified rules
    =========================== */
-@media (max-width: 680px) {
-  .dropdown { position: relative; }
 
-  /* hidden by default on mobile; centered under trigger; width clamped */
-  .dropdown .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+/* Base */
+.main-nav .dropdown { position: relative; }
+.main-nav .dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  min-width: 240px;
+  max-width: min(94vw, 360px);
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .18s, transform .18s, visibility .18s;
+  z-index: 1000;
+}
+.main-nav .dropdown:hover .dropdown-menu,
+.main-nav .dropdown:focus-within .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tablet: align inward */
+@media (max-width: 1024px) and (min-width: 681px) {
+  .main-nav .dropdown .dropdown-menu {
+    right: 0;
+    left: auto;
     width: min(92vw, 360px);
-    min-width: 0;
-    margin-top: 6px;
+  }
+}
 
+/* Phones: center toggle */
+@media (max-width: 680px) {
+  .main-nav .dropdown .dropdown-menu {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 6px);
+    width: min(92vw, 360px);
     visibility: hidden;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height .25s ease, opacity .15s ease, visibility .15s ease;
   }
-
-  /* show when .is-open gets toggled by JS */
-  .dropdown.is-open .dropdown-menu {
+  .main-nav .dropdown.is-open .dropdown-menu {
     visibility: visible;
     opacity: 1;
     max-height: 1000px;
+    transform: translate(-50%, 0);
   }
-
-  /* disable hover-open on touch to avoid sticky hover */
-  .dropdown:hover .dropdown-menu { visibility: hidden; opacity: 0; transform: translateX(-50%); }
-
-  /* bigger tap targets */
-  .dropdown .dropdown-menu a { padding: 12px; display: block; }
-}
-
-/* No sideways scroll on small screens */
-@media (max-width: 680px) {
+  .main-nav .dropdown:hover .dropdown-menu { visibility: hidden; opacity: 0; }
   html, body { overflow-x: hidden; }
 }
 
 /* ===========================
-   Responsive Google Form (embed or plain iframe)
+   Google Form: responsive embed
    =========================== */
-.form-embed { width: 100%; max-width: 100%; }
-.form-embed iframe,
-.quote-form iframe {
+.form-embed, .quote-form { width: 100%; max-width: 100%; }
+.form-embed iframe, .quote-form iframe {
   display: block;
-  width: 100% !important;   /* override fixed 640/740px embeds */
+  width: 100% !important;
   max-width: 100%;
   border: 0;
   height: auto;
-  min-height: 1200px;       /* desktop-ish */
+  min-height: 1200px;
 }
 @media (max-width: 680px) {
-  .form-embed iframe,
-  .quote-form iframe { min-height: 1500px; } /* adjust if your form is long */
+  .form-embed iframe, .quote-form iframe { min-height: 1500px; }
 }
+
 /* ===========================
    End of style.css
    =========================== */
-
-
-
-   

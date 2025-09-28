@@ -100,22 +100,31 @@
       <h4>Certifications:</h4>
       ASME &amp; TSSA<br><span>In progress</span>
     </a>
-  
 <script>
-  // Toggle submenu on tap only for small screens
-  document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      if (window.matchMedia('(max-width: 680px)').matches) {
-        e.preventDefault(); // prevent navigating on tap
+document.addEventListener('DOMContentLoaded', function(){
+  const isPhone = () => window.matchMedia('(max-width: 680px)').matches;
+
+  document.querySelectorAll('.main-nav .dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e){
+      if (isPhone()) {
         const li = this.parentElement;
-        li.classList.toggle('is-open');
-        // close siblings (optional)
-        [...li.parentElement.children].forEach(sib => {
-          if (sib !== li) sib.classList.remove('is-open');
-        });
+
+        if (!li.classList.contains('is-open')) {
+          // first tap → open dropdown, block navigation
+          e.preventDefault();
+          li.classList.add('is-open');
+
+          // close other open dropdowns
+          li.parentElement.querySelectorAll('.dropdown.is-open').forEach(sib=>{
+            if (sib !== li) sib.classList.remove('is-open');
+          });
+        } 
+        // second tap → no preventDefault, so it navigates to services.html
       }
     });
   });
+});
 </script>
+
 </body>
 </html>
