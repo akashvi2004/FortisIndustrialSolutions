@@ -106,6 +106,22 @@
       <h4>Certifications:</h4>
       ASME &amp; TSSA<br><span>In progress</span>
     </a>
-
+  
+<script>
+  // Toggle submenu on tap only for small screens
+  document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (window.matchMedia('(max-width: 680px)').matches) {
+        e.preventDefault(); // prevent navigating on tap
+        const li = this.parentElement;
+        li.classList.toggle('is-open');
+        // close siblings (optional)
+        [...li.parentElement.children].forEach(sib => {
+          if (sib !== li) sib.classList.remove('is-open');
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>

@@ -15,18 +15,11 @@ main { padding: 20px; }
 section { margin-bottom: 40px; }
 h2 { color: #006600; }
 
-/* Remove bullets everywhere (except About page content override below) */
+/* Remove bullets globally; we re-enable them for content lists later */
 ul, ol {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-/* Keep bullets/numbers on About page content only */
-.about-page main ul,
-.about-page main ol {
-  list-style: revert;
-  margin-left: 20px;
 }
 
 /* ===========================
@@ -413,15 +406,68 @@ footer { background-color: #003300; color: white; text-align: center; padding: 2
 @media (max-width: 900px) {
   .edge-badge { display: none; } /* hide badge on mobile */
 }
-.about-page main ul,
-.about-page main ol {
-  display: inline-block;     /* shrink list to content */
-  text-align: left;          /* align bullets and text inside list */
+
+/* ===========================
+   Unified "About-style" lists (content only)
+   =========================== */
+main ul:not(.main-nav):not(.dropdown-menu),
+main ol:not(.main-nav):not(.dropdown-menu) {
   list-style-position: outside;
-  margin: 0 auto 1rem;       /* center the whole block */
-  padding-left: 1.5rem;      /* space for bullets */
+  display: inline-block;     /* shrink list to content width */
+  text-align: left;          /* bullets + text align left */
+  margin: 0 auto 1rem;       /* center the whole list block */
+  padding-left: 1.5rem;      /* space for markers */
 }
 
-.about-page main li {
-  margin: .4rem 0;
+main ul:not(.main-nav):not(.dropdown-menu) { list-style-type: disc; }
+main ol:not(.main-nav):not(.dropdown-menu) { list-style-type: decimal; }
+
+main li { margin: .4rem 0; }
+main li::marker { color: #0a4d0a; } /* optional tint */
+
+/* Nested lists */
+main li > ul { list-style-type: circle; margin: .3rem 0 .6rem 1.2rem; }
+main li > ol { list-style-type: lower-alpha; margin: .3rem 0 .6rem 1.2rem; }
+
+/* Mobile nav = stacked; submenu becomes an accordion */
+@media (max-width: 680px) {
+  .header-nav { width: 100%; }
+  .main-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .main-nav > li > a { width: 100%; }
+
+  /* Submenu becomes in-flow block (no overflow off-screen) */
+  .dropdown { position: static; }
+  .dropdown .dropdown-menu {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    margin-top: 6px;
+    transform: none;
+    /* hidden by default */
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease, opacity .15s ease;
+  }
+
+  /* When parent has .is-open (toggled by JS), show submenu */
+  .dropdown.is-open .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    max-height: 1000px; /* big enough to reveal content */
+  }
+
+  /* Optional: subtle style tweak for mobile submenu */
+  .dropdown .dropdown-menu a {
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  /* Disable the desktop hover-open on mobile (tap only) */
+  .dropdown:hover .dropdown-menu { visibility: hidden; opacity: 0; transform: none; }
 }
