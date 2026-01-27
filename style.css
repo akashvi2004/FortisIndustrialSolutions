@@ -2156,3 +2156,23 @@ footer{
   object-fit:cover;
   display:block;
 }
+
+.design-split-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+@media (max-width:900px){
+  .design-split-list{ grid-template-columns:1fr; }
+}
+
+.design-page{
+  padding: 0;
+}
+
+.design-cta-band{
+  margin-left: -20px;
+  margin-right: -20px;
+  width: calc(100% + 40px);
+}
