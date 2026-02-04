@@ -928,7 +928,16 @@ footer{
 .fab-hero-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
 .fab-hero-note{ margin-top:10px; opacity:.9; font-size:.95rem; }
 .fab-hero-media{ border:1px solid var(--border); border-radius:16px; overflow:hidden; background:#fff; box-shadow: var(--shadow); }
-.fab-hero-img{ height:100%; min-height:220px; display:grid; place-items:center; font-weight:800; color:#234a2a; background: linear-gradient(135deg,#ffffff 0%,#f2f7f2 100%); }
+
+/* FAB hero image (actual image element) */
+.fab-hero-media img.fab-hero-img{
+  width:100%;
+  height:100%;
+  min-height:220px;
+  object-fit:cover;
+  display:block;
+  border-radius:0; /* keep sharp inside container, container has radius */
+}
 
 .fab-quick{ padding:14px 0; }
 .fab-quick-inner{ width:min(1200px,92vw); margin:0 auto; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
@@ -1025,15 +1034,22 @@ footer{
   font-weight:900;
   color:#234a2a;
 }
+.fab-bottom-cta{
+  background: linear-gradient(135deg,#f9fdf9 0%,#eef7ef 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0 30px;   /* add spacing here */
+}
 
-.fab-bottom-cta{ padding:18px 0 30px; }
 .fab-bottom-inner{
   width:min(1200px,92vw);
   margin:0 auto;
+
   border-radius:16px;
-  background: linear-gradient(135deg,#f9fdf9 0%,#eef7ef 100%);
+  background: #fff;              /* or var(--sheet) */
   border:1px solid var(--border);
   padding:18px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -1049,7 +1065,6 @@ footer{
   .fab-two-col{ grid-template-columns:1fr; }
   .fab-quick-inner{ grid-template-columns:1fr; }
   .treat-grid{ grid-template-columns:1fr; }
-  .cap-table{ min-width:0; }
 }
 
 
@@ -2070,16 +2085,6 @@ footer{
   .design-gallery{ grid-template-columns: 1fr; }
 }
 
-/* Fabrication Hero Image */
-.fab-hero-img{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:16px;
-  cursor: zoom-in;
-  border:1px solid rgba(0,0,0,0.08);
-}
-
 /* Featured tiles */
 .fab-tile{
   display:block;
@@ -2172,7 +2177,730 @@ footer{
 }
 
 .design-cta-band{
-  margin-left: -20px;
-  margin-right: -20px;
-  width: calc(100% + 40px);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Surface Finishing cards */
+.finish-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:14px;
+  margin-top:14px;
+}
+
+.finish-card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:14px;
+  padding:14px;
+  overflow:hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.finish-img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:12px;
+  display:block;
+}
+
+.finish-card h3{ margin:0 0 6px; }
+.finish-card .ra{ font-weight:700; font-size:.95em; opacity:.85; }
+
+@media (max-width:900px){
+  .finish-grid{ grid-template-columns:1fr; }
+}
+
+/* Surface Finishing methods grid */
+.sf-method-grid{
+  display:grid;
+  grid-template-columns:repeat(1, minmax(0, 1fr));
+  gap:12px;
+}
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling: touch;
+  background:#fff;
+  border:1px solid #e5efe6;
+  border-radius:12px;
+}
+
+.finish-table{
+  width:100%;
+  border-collapse: separate;  /* allows spacing */
+  border-spacing: 0;          /* we’ll use padding + borders */
+  min-width: 720px;           /* keep it readable on desktop */
+}
+
+.finish-table th,
+.finish-table td{
+  padding: 12px 14px;         /* THIS is your row spacing */
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.45;
+  white-space: nowrap;        /* optional: keeps columns neat */
+}
+
+.finish-table thead th{
+  background:#f8fcf8;
+  color: var(--text-800);
+  font-weight: 900;
+  border-bottom: 1px solid #e6efe6;
+}
+
+.finish-table tbody tr td{
+  border-bottom: 1px solid #eef3ee;  /* row separators */
+}
+
+.finish-table tbody tr:last-child td{
+  border-bottom: none;
+}
+
+/* optional: subtle zebra stripes so it’s easier to scan */
+.finish-table tbody tr:nth-child(even){
+  background: #fbfdfb;
+}
+/* Polishing page only - makes 3 cards look balanced */
+.polish-types .treat-grid{
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+/* ==========================================================
+   ON-SITE MOBILE SERVICES (mobile.html)
+   Layout: matches docx guide (clean / no duplicates)
+   ========================================================== */
+
+.mobile-page main { padding: 0; }
+
+/* ---------------------------
+   ABOUT-STYLE HERO (like About Us)
+---------------------------- */
+.about-style-hero{
+  position: relative;
+  min-height: 420px;
+  background: url("images/on-siteServices/hero-truck.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-style-hero::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+}
+
+.mobile-hero-content{
+  position: relative;
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  color: #fff;
+}
+
+.mobile-hero-content h1{
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  margin: 0 0 10px;
+}
+
+.mobile-hero-content p{
+  max-width: 650px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 18px;
+  color: rgba(255,255,255,.92);
+}
+
+/* hero buttons (left aligned like about page) */
+.mobile-hero-actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* ---------------------------
+   SECTION SHELL + HEADERS
+---------------------------- */
+.mobile-section{ padding: 28px 0; }
+
+.mobile-section-inner{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.mobile-h2{
+  text-align: center;
+  margin: 0 0 16px;
+  color: var(--green-800);
+  font-weight: 900;
+  font-size: clamp(20px, 2.5vw, 28px);
+}
+
+.mobile-lead{
+  text-align: center;
+  max-width: 90ch;
+  margin: 0 auto 18px;
+  color: var(--text-700);
+  line-height: 1.7;
+  font-weight: 500; /* unbold */
+}
+
+/* left aligned header used inside duo cards */
+.mobile-h2-left{
+  text-align: left;
+  margin: 0 0 10px;
+}
+
+.mobile-lead-left{
+  margin: 0 0 14px;
+  color: var(--text-700);
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+/* ---------------------------
+   BENEFITS GRID (5 cards)
+---------------------------- */
+.mobile-benefits-grid{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1100px){
+  .mobile-benefits-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px){
+  .mobile-benefits-grid{ grid-template-columns: 1fr; }
+}
+
+.mobile-benefit{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+
+.mobile-benefit-top{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.mobile-check{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #eaf6ec;
+  border: 1px solid var(--border);
+  color: var(--green-800);
+  font-weight: 900;
+}
+
+.mobile-benefit h3{
+  margin: 0;
+  color: var(--text-900);
+  font-size: 1.05rem;
+}
+
+.mobile-benefit p{
+  margin: 0;
+  color: var(--text-700);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+/* ---------------------------
+   SERVICES GRID (2x2)
+---------------------------- */
+.mobile-services-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 720px){
+  .mobile-services-grid{ grid-template-columns: 1fr; }
+}
+
+.mobile-service-card{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.mobile-service-icon{
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--soft);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.mobile-service-icon img{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+
+.mobile-service-card h3{
+  margin: 2px 0 6px;
+  color: var(--text-900);
+  font-size: 1.05rem;
+}
+
+.mobile-service-card p{
+  margin: 0;
+  color: var(--text-700);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+/* ---------------------------
+   EQUIPMENT + INSTALLATIONS (side-by-side cards)
+---------------------------- */
+.mobile-duo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+@media (max-width: 950px){
+  .mobile-duo{ grid-template-columns: 1fr; }
+}
+
+.mobile-duo-card{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-duo-card h3{
+  margin: 0 0 6px;
+}
+
+.mobile-duo-card .divider{
+  margin: 14px 0;
+}
+
+/* equipment list */
+.mobile-equip-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.mobile-equip-list li{
+  position: relative;
+  padding-left: 22px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.mobile-equip-list li::before{
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--green-700);
+  font-weight: 700;
+}
+
+/* optional 2-column equipment list */
+.mobile-equip-2col{
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+@media (max-width: 700px){
+  .mobile-equip-2col{ grid-template-columns: 1fr; }
+}
+
+/* mini blocks inside equipment card */
+.mobile-mini-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+@media (max-width: 700px){
+  .mobile-mini-grid{ grid-template-columns: 1fr; }
+}
+
+.mobile-mini{
+  border: 1px solid var(--border);
+  background: var(--soft);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.mobile-mini h3{
+  margin: 0 0 6px;
+  color: var(--text-900);
+  font-size: 1rem;
+}
+
+.mobile-mini ul{
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-700);
+  line-height: 1.55;
+}
+
+.mobile-note{
+  margin: 14px 0 0;
+  color: var(--text-700);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* ---------------------------
+   WHY FORTIS (light cards)
+---------------------------- */
+.mobile-why-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 980px){
+  .mobile-why-grid{ grid-template-columns: 1fr; }
+}
+
+.mobile-why-card{
+  background: #f5fbf6;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  color: var(--text-900);
+  box-shadow: var(--shadow-soft);
+}
+
+.mobile-why-card h3{
+  margin: 0 0 8px;
+  color: var(--green-800);
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.mobile-why-card p{
+  margin: 0;
+  color: var(--text-700);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+/* ---------------------------
+   CTA BAR
+---------------------------- */
+.mobile-cta{
+  background: #0d3e12;
+  color: #fff;
+  padding: 18px 0;
+}
+
+.mobile-cta-inner{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.mobile-cta-inner p{
+  margin: 0;
+  font-weight: 800;
+  color: rgba(255,255,255,.92);
+  line-height: 1.5;
+}
+/* ==========================================================
+   SANDBLASTING PAGE (matches your UI kit + reference layout)
+   Scoped under .sb-page so it won’t affect other pages
+   ========================================================== */
+
+.sb-page main{ padding: 0; }
+
+/* ---------- HERO SPLIT (text left + image right) ---------- */
+.sb-hero{
+  padding: 26px 0 14px;
+  background: linear-gradient(135deg,#f9fdf9 0%,#eef7ef 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.sb-hero-inner{
+  width: min(1200px,92vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* left text card */
+.sb-hero-copy{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.sb-hero-copy h1{
+  margin: 0 0 10px;
+  color: var(--green-800);
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.12;
+}
+
+.sb-subtitle{
+  margin: 0 0 14px;
+  color: var(--text-700);
+  font-weight: 700;
+  opacity: .92;
+  line-height: 1.55;
+}
+
+.sb-hero-copy p{
+  margin: 0 0 12px;
+  color: var(--text-700);
+  line-height: 1.7;
+}
+
+/* right image card with “fade into white” */
+.sb-hero-media{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow);
+  position: relative;
+  min-height: 280px;
+}
+
+.sb-hero-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(105%) contrast(1.05);
+  opacity: .95;
+}
+
+/* white blend on left like your reference */
+.sb-hero-media::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 62%);
+  pointer-events:none;
+}
+
+/* ---------- SECTION SHELL ---------- */
+.sb-section{
+  padding: 18px 0 26px;
+}
+
+.sb-inner{
+  width: min(1200px,92vw);
+  margin: 0 auto;
+}
+
+.sb-title{
+  text-align: center;
+  margin: 10px 0 18px;
+  color: var(--green-800);
+  font-weight: 900;
+  font-size: clamp(22px, 2.4vw, 32px);
+}
+
+/* ---------- KEY BENEFITS (5 cards) ---------- */
+.sb-benefits{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* “top dark strip + light body” effect using your greens */
+.sb-benefit{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+
+/* top strip */
+.sb-benefit-top{
+  background: linear-gradient(180deg, var(--green-850), var(--green-900));
+  color: #fff;
+  padding: 14px 12px 12px;
+  min-height: 96px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.sb-benefit-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.22);
+  display: grid;
+  place-items: center;
+}
+
+.sb-benefit-icon img{
+  width: 44px;
+  height: 44px;
+  object-fit: fill;
+  display: block;
+  opacity: .95;
+}
+
+.sb-benefit-top h3{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.sb-benefit-body{
+  padding: 12px 12px 14px;
+}
+
+.sb-benefit-body p{
+  margin: 0;
+  color: var(--text-700);
+  line-height: 1.55;
+  font-weight: 500;
+  font-size: .95rem;
+}
+
+/* ---------- DARK BAND (Mobile & Shop-Based Capability) ---------- */
+.sb-band{
+  margin: 16px 0 0;
+  padding: 14px 0;
+  background: var(--green-900);
+  color: #fff;
+}
+
+.sb-band-inner{
+  width: min(1200px,92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  justify-content: center;
+  line-height: 1.55;
+}
+
+.sb-band-inner strong{
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.sb-band-inner span{
+  color: rgba(255,255,255,.9);
+  font-weight: 600;
+}
+
+/* ---------- EQUIPMENT GRID ---------- */
+.sb-equip{
+  padding: 22px 0 30px;
+}
+
+.sb-equip-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sb-equip-card{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.sb-equip-icon{
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 10px;
+  border-radius: 14px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+}
+
+.sb-equip-icon img{
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+  opacity: .9;
+}
+
+.sb-equip-card h3{
+  margin: 0 0 6px;
+  color: var(--text-900);
+  font-weight: 900;
+  font-size: 1.03rem;
+}
+
+.sb-equip-card p{
+  margin: 0;
+  color: var(--text-700);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1050px){
+  .sb-benefits{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 950px){
+  .sb-hero-inner{ grid-template-columns: 1fr; }
+  .sb-hero-media{ min-height: 240px; }
+  .sb-equip-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px){
+  .sb-benefits{ grid-template-columns: 1fr; }
+  .sb-equip-grid{ grid-template-columns: 1fr; }
 }
