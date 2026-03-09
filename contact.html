@@ -215,10 +215,17 @@ document.addEventListener("DOMContentLoaded", function () {
     formData.append("message", form.message.value.trim());
 
     try {
-      await fetch(SCRIPT_URL, {
+      const response = await fetch(SCRIPT_URL, {
         method: "POST",
         body: formData
       });
+
+      const text = await response.text();
+      console.log("Apps Script response:", text);
+
+      if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+      }
 
       status.textContent = "Your message has been submitted successfully.";
       status.classList.add("is-success");
@@ -226,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       status.textContent = "Something went wrong. Please try again.";
       status.classList.add("is-error");
-      console.error(error);
+      console.error("Form submission error:", error);
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = "Submit Now";
