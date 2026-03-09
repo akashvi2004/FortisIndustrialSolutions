@@ -2904,3 +2904,180 @@ footer{
   .sb-benefits{ grid-template-columns: 1fr; }
   .sb-equip-grid{ grid-template-columns: 1fr; }
 }
+
+/* =========================================
+   CONTACT PAGE — CUSTOM FORM VERSION
+   ========================================= */
+
+.contact-page{
+  padding: 0;
+}
+
+/* FORM SECTION */
+.contact-form-section{
+  padding: 20px 0 44px;
+}
+
+.contact-form-wide{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 8px solid #1e90e6;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 34px 40px 40px;
+}
+
+.contact-form-wide-head{
+  margin-bottom: 24px;
+}
+
+.contact-form-head-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.contact-form-kicker{
+  margin: 0;
+  font-size: clamp(38px, 4vw, 64px);
+  line-height: .95;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -.03em;
+}
+
+.contact-form-kicker span{
+  color: #1e90e6;
+}
+
+.contact-form-intro h3{
+  margin: 0 0 10px;
+  font-size: clamp(28px, 2.5vw, 42px);
+  color: #111;
+  font-weight: 500;
+}
+
+.contact-form-intro p{
+  margin: 0;
+  color: #5f6773;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ACTUAL FORM */
+.fortis-contact-form{
+  display: block;
+}
+
+.contact-form-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.fortis-contact-form input,
+.fortis-contact-form textarea{
+  width: 100%;
+  border: 1px solid #d9dee5;
+  border-radius: 8px;
+  padding: 18px 20px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-900);
+  background: #fff;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.fortis-contact-form input::placeholder,
+.fortis-contact-form textarea::placeholder{
+  color: #6c7480;
+}
+
+.fortis-contact-form input:focus,
+.fortis-contact-form textarea:focus{
+  border-color: #6aa9ff;
+  box-shadow: 0 0 0 3px rgba(30,144,230,.12);
+}
+
+.fortis-contact-form textarea{
+  resize: vertical;
+  min-height: 180px;
+  margin-bottom: 22px;
+}
+
+.contact-submit-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  padding: 16px 26px;
+  background: linear-gradient(180deg, #2ea3f2 0%, #1e90e6 100%);
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(30,144,230,.18);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.contact-submit-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 10px 22px rgba(30,144,230,.24);
+}
+
+.contact-submit-btn:disabled{
+  opacity: .7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-status{
+  margin: 14px 0 0;
+  font-weight: 700;
+  min-height: 1.2em;
+}
+
+.form-status.is-success{
+  color: #0b7a28;
+}
+
+.form-status.is-error{
+  color: #b42318;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .contact-form-head-grid{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-form-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px){
+  .contact-form-wide{
+    padding: 22px 20px 24px;
+  }
+
+  .contact-form-kicker{
+    font-size: 2.6rem;
+  }
+
+  .contact-form-intro h3{
+    font-size: 2rem;
+  }
+
+  .fortis-contact-form input,
+  .fortis-contact-form textarea{
+    padding: 16px 16px;
+  }
+}

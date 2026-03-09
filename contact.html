@@ -43,39 +43,90 @@
     </ul>
   </nav>
 </header>
-
-  <main>
-    <div class="page-wrapper">
-      <section class="contact">
-        <h1>Contact Us & Quote/Inquiry</h1>
-
-        <p><strong>Address:</strong> Scarborough, ON, M1T 3B7</p>
-        <p><strong>Email:</strong> <a href="mailto:sales@ifortisol.com">sales@ifortisol.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:6479691152">+1 (647)-969-1152</a></p>
-        <p><strong>Business Hours:</strong> Mon–Fri, 9AM–6PM</p>
-        <section class="quote-form">
-  <h2>Request a Quote</h2>
-  <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfePjAy014q1CYY47eeZkdqYaWKqykQtfy0tdYcvvT1FIhDMQ/viewform"
-        target="_blank" rel="noopener">Open full form ↗</a></p>
-  <div class="form-embed">
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSfePjAy014q1CYY47eeZkdqYaWKqykQtfy0tdYcvvT1FIhDMQ/viewform?embedded=true"
-      loading="lazy"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen>
-    </iframe>
-  </div>
-  <!-- optional fallback -->
-  <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfePjAy014q1CYY47eeZkdqYaWKqykQtfy0tdYcvvT1FIhDMQ/viewform"
-        target="_blank" rel="noopener">Open full form ↗</a></p>
-</section>
-
-      </section>
+<main class="contact-page">
+  <!-- HERO -->
+  <section class="contact-hero">
+    <div class="contact-hero-overlay">
+      <div class="contact-hero-inner container">
+        <p class="contact-eyebrow">Fortis Industrial Solutions</p>
+        <h1>Contact Us</h1>
+        <p class="contact-hero-sub">
+          Reach out to discuss stainless steel fabrication, finishing, passivation,
+          drafting, or on-site industrial support. We’ll help you find the right solution
+          for your project.
+        </p>
+      </div>
     </div>
-  </main>
+  </section>
+
+  <!-- CONTACT INFO -->
+  <section class="contact-info-section">
+    <div class="container">
+      <div class="contact-section-head center">
+        <h2>Our Contact Information</h2>
+        <p class="section-sub">Reach out to us directly for quotes, inquiries, or project discussions.</p>
+      </div>
+
+      <div class="contact-cards">
+        <article class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <h3>Phone Number</h3>
+          <p>Call us for immediate assistance</p>
+          <a href="tel:6479691152">(647) 969-1152</a>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <h3>Email Address</h3>
+          <p>Send us an email for detailed inquiries</p>
+          <a href="mailto:sales@ifortisol.com">sales@ifortisol.com</a>
+        </article>
+
+        <article class="contact-card">
+          <div class="contact-card-icon">🕒</div>
+          <h3>Business Hours</h3>
+          <p>We are available during the week</p>
+          <span>Mon–Fri, 9AM–6PM</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- CONTACT FORM -->
+<section class="contact-form-section">
+  <div class="container">
+    <div class="contact-form-wide">
+      <div class="contact-form-wide-head">
+        <div class="contact-form-head-grid">
+          <h2 class="contact-form-kicker">CONTACT <span>FORM</span></h2>
+
+          <div class="contact-form-intro">
+            <h3>Send Us a Message</h3>
+            <p>
+              Fill out the contact form for quotes, inquiries, or support.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <form class="fortis-contact-form" id="fortisContactForm">
+        <div class="contact-form-grid">
+          <input type="text" name="fullName" placeholder="Full Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <input type="tel" name="phone" placeholder="Phone Number" />
+          <input type="text" name="subject" placeholder="Subject" required />
+        </div>
+
+        <textarea name="message" placeholder="Your Message" rows="7" required></textarea>
+
+        <button type="submit" class="contact-submit-btn">Submit Now</button>
+
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
 
    <footer class="site-footer">
   <div class="footer-inner">
@@ -144,6 +195,50 @@ document.addEventListener('DOMContentLoaded', function(){
 
   toggle.addEventListener('click', () => {
     nav.classList.toggle('is-open');
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("fortisContactForm");
+  const status = document.getElementById("formStatus");
+  const submitBtn = form.querySelector(".contact-submit-btn");
+
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCiHJbC48JjSchU7bKyR10-5zdJS3k1ESP_wWuhrOXH2OTX7LyUXPEW9zevLlP2llk/exec";
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    status.textContent = "";
+    status.className = "form-status";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    const formData = new FormData();
+    formData.append("fullName", form.fullName.value.trim());
+    formData.append("email", form.email.value.trim());
+    formData.append("phone", form.phone.value.trim());
+    formData.append("subject", form.subject.value.trim());
+    formData.append("message", form.message.value.trim());
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData
+      });
+
+      status.textContent = "Your message has been submitted successfully.";
+      status.classList.add("is-success");
+      form.reset();
+    } catch (error) {
+      status.textContent = "Something went wrong. Please try again.";
+      status.classList.add("is-error");
+      console.error(error);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Now";
+    }
   });
 });
 </script>
