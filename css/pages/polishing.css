@@ -1,0 +1,384 @@
+/* =========================================
+   SURFACE FINISHING / POLISHING PAGE
+========================================= */
+
+/* ===========================
+   HERO
+=========================== */
+
+.finish-hero{
+  padding:26px 0 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border-bottom:1px solid var(--border);
+}
+
+.finish-hero-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+
+  gap:18px;
+  align-items:stretch;
+}
+
+.finish-hero-copy{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:20px;
+  text-align:left;
+
+  box-shadow:var(--shadow);
+}
+
+.finish-hero-copy h1{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.finish-hero-copy p{
+  margin:0 0 12px;
+
+  color:var(--text-700);
+  line-height:1.7;
+}
+
+.finish-hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+/* Hero image */
+.finish-hero-media{
+  overflow:hidden;
+
+  border-radius:16px;
+  border:1px solid var(--border);
+
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.finish-hero-media img{
+  width:100%;
+  height:100%;
+  min-height:240px;
+
+  object-fit:cover;
+  display:block;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.finish-section{
+  padding:18px 0;
+}
+.finish-section img{
+  width:100%;
+  max-height:300px;
+
+  object-fit:cover;
+
+  border-radius:12px;
+  display:block;
+}
+
+.finish-section-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+}
+
+.finish-two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.finish-panel{
+  background:var(--soft);
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+  text-align:left;
+
+  box-shadow:var(--shadow);
+}
+
+.finish-panel h2{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.finish-panel h3{
+  margin:0 0 10px;
+  color:var(--text-900);
+}
+
+.finish-panel p{
+  line-height:1.7;
+  color:var(--text-700);
+}
+
+/* Lists */
+.finish-list{
+  margin:0;
+  padding-left:18px;
+}
+
+.finish-list li{
+  margin:8px 0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   METHODS
+=========================== */
+
+.sf-method-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+  gap:16px;
+}
+
+.sf-method-card{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.sf-method-card h3{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.sf-method-card p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   POLISH TYPES
+=========================== */
+
+.polish-types{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+  gap:16px;
+}
+
+.polish-card{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  overflow:hidden;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.polish-card img{
+  width:100%;
+  height:140px;
+
+  object-fit:cover;
+  display:block;
+}
+
+.polish-card-content{
+  padding:16px;
+}
+
+.polish-card-content h3{
+  margin:0 0 8px;
+  color:var(--green-800);
+}
+
+.polish-card-content p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+
+  background:#fff;
+  border:1px solid #e5efe6;
+  border-radius:12px;
+}
+
+.finish-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:560px;
+}
+
+.finish-table th,
+.finish-table td{
+  padding:12px;
+  border-bottom:1px solid #eef3ee;
+  vertical-align:top;
+}
+
+.finish-table th{
+  text-align:left;
+  background:#f8fcf8;
+
+  color:var(--text-800);
+  font-weight:900;
+}
+
+.finish-table tr:last-child td{
+  border-bottom:none;
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.finish-cta{
+  padding:28px 0;
+}
+
+.finish-cta-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border:1px solid var(--border);
+  border-radius:18px;
+
+  padding:22px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+
+  box-shadow:var(--shadow);
+}
+
+.finish-cta-copy h2{
+  margin:0 0 8px;
+  color:var(--green-800);
+}
+
+.finish-cta-copy p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+.finish-cta-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ===========================
+   FINISH TYPES
+=========================== */
+
+.finish-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.finish-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.finish-img{
+  width:100%;
+  height:180px;
+
+  object-fit:cover;
+  display:block;
+}
+
+.finish-card h3{
+  padding:16px 16px 0;
+  margin:0;
+
+  color:var(--green-800);
+}
+
+.finish-card p,
+.finish-card ul{
+  padding:0 16px;
+}
+
+.finish-card ul{
+  padding-bottom:16px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:950px){
+
+  .finish-hero-inner,
+  .finish-two-col{
+    grid-template-columns:1fr;
+  }
+
+  .finish-cta-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media (max-width:680px){
+
+  .finish-hero{
+    padding-top:20px;
+  }
+}

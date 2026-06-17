@@ -1,0 +1,453 @@
+/* =========================================
+   FABRICATION PAGE
+========================================= */
+
+/* ===========================
+   HERO
+=========================== */
+
+.fab-hero{
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border-bottom:1px solid var(--border);
+  padding:26px 0 14px;
+}
+
+.fab-hero-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:18px;
+
+  align-items:stretch;
+}
+
+.fab-hero-copy{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:20px;
+  text-align:left;
+
+  box-shadow: var(--shadow);
+}
+
+.fab-hero-copy h1{
+  margin:0 0 10px;
+  color: var(--green-800);
+}
+
+.fab-hero-copy p{
+  margin:0 0 12px;
+  line-height:1.7;
+  color: var(--text-700);
+}
+
+.fab-hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.fab-hero-note{
+  margin-top:10px;
+  opacity:.9;
+  font-size:.95rem;
+}
+
+/* Hero image */
+.fab-hero-media{
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  overflow:hidden;
+  background:#fff;
+
+  box-shadow: var(--shadow);
+}
+
+.fab-hero-media img.fab-hero-img{
+  width:100%;
+  height:100%;
+  min-height:220px;
+
+  object-fit:cover;
+  display:block;
+}
+
+/* ===========================
+   QUICK LINKS
+=========================== */
+
+.fab-quick{
+  padding:14px 0;
+}
+
+.fab-quick-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:12px;
+}
+
+.quick-card{
+  display:flex;
+  gap:12px;
+  align-items:center;
+
+  text-decoration:none;
+
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+
+  padding:14px;
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.05);
+
+  transition:
+    transform .16s ease,
+    box-shadow .16s ease,
+    border-color .16s ease;
+}
+
+.quick-card:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 12px 26px rgba(0,0,0,.08);
+
+  border-color:#8fcf95;
+}
+
+.quick-icon{
+  font-size:26px;
+  width:40px;
+  text-align:center;
+}
+
+.quick-card h3{
+  margin:0 0 3px;
+  color: var(--text-900);
+  font-size:1.05rem;
+}
+
+.quick-card p{
+  margin:0;
+  color: var(--text-700);
+  opacity:.92;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+.fab-section{
+  padding:18px 0;
+}
+
+.fab-section-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+}
+
+.fab-two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+/* Panels */
+.fab-panel{
+  background: var(--soft);
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+
+  box-shadow: var(--shadow);
+  text-align:left;
+}
+
+.fab-panel h2{
+  margin:0 0 10px;
+  color: var(--green-800);
+}
+
+.fab-panel h3{
+  margin:0 0 10px;
+  color: var(--text-900);
+}
+
+/* Lists */
+.clean-list{
+  margin:0;
+  padding-left:18px;
+}
+
+.clean-list li{
+  margin:8px 0;
+  line-height:1.6;
+  color: var(--text-700);
+}
+
+/* ===========================
+   FEATURE TILES
+=========================== */
+
+.fab-tile-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+  gap:10px;
+}
+
+.fab-tile{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+
+  overflow:hidden;
+  text-align:center;
+}
+
+.fab-tile-img{
+  width:100%;
+  height:180px;
+
+  object-fit:cover;
+  display:block;
+
+  cursor:zoom-in;
+}
+
+.fab-tile p{
+  margin:10px 0 12px;
+  padding:12px;
+
+  font-weight:700;
+  color: var(--text-900);
+}
+
+.fab-mini-note{
+  margin-top:12px;
+  color: var(--text-700);
+  opacity:.92;
+}
+
+/* ===========================
+   REPAIRS BAR
+=========================== */
+
+.repairs-bar{
+  padding:14px 0;
+  background: var(--green-800);
+  color:#fff;
+  margin:12px 0;
+}
+
+.repairs-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.repairs-inner h2{
+  margin:0;
+  color:#fff;
+  font-size:1.1rem;
+}
+
+.repairs-pills{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.repairs-pills .pill{
+  background:
+    rgba(255,255,255,.12);
+
+  border:1px solid
+    rgba(255,255,255,.28);
+
+  color:#fff;
+}
+
+/* ===========================
+   TABLES
+=========================== */
+
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+
+  background:#fff;
+  border:1px solid #e5efe6;
+  border-radius:12px;
+}
+
+.cap-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:560px;
+}
+
+.cap-table th,
+.cap-table td{
+  padding:12px;
+  border-bottom:1px solid #eef3ee;
+  vertical-align:top;
+  font-size:.95rem;
+}
+
+.cap-table th{
+  text-align:left;
+  background:#f8fcf8;
+  color: var(--text-800);
+  font-weight:900;
+}
+
+.cap-table tr:last-child td{
+  border-bottom:none;
+}
+
+/* ===========================
+   TREATMENTS
+=========================== */
+
+.treat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.treat-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:12px;
+}
+
+.treat-card h4{
+  margin:0 0 8px;
+  color: var(--green-800);
+}
+
+.treat-card ul{
+  margin:0;
+  padding-left:18px;
+}
+
+.treat-card li{
+  margin:6px 0;
+  line-height:1.5;
+  color: var(--text-700);
+}
+
+/* Quality image */
+.quality-img{
+  width:100%;
+  height:auto;
+  display:block;
+
+  border-radius:14px;
+  cursor:zoom-in;
+
+  margin-bottom:12px;
+  border:1px solid rgba(0,0,0,.08);
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.fab-bottom-cta{
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+
+  padding:18px 0 30px;
+}
+
+.fab-bottom-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  border-radius:16px;
+  background:#fff;
+  border:1px solid var(--border);
+
+  padding:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.fab-bottom-inner h2{
+  margin:0 0 6px;
+  color: var(--green-800);
+}
+
+.fab-bottom-inner p{
+  margin:0;
+  color: var(--text-700);
+  opacity:.92;
+}
+
+.fab-bottom-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:950px){
+
+  .fab-hero-inner,
+  .fab-two-col,
+  .fab-quick-inner,
+  .treat-grid{
+    grid-template-columns:1fr;
+  }
+
+  .fab-tile-grid{
+    grid-template-columns:1fr;
+  }
+}

@@ -1,0 +1,326 @@
+/* =========================================
+   PASSIVATION PAGE
+========================================= */
+
+/* ===========================
+   HERO
+=========================== */
+
+.pass-hero{
+  padding:26px 0 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border-bottom:1px solid var(--border);
+}
+
+.pass-hero-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+
+  gap:18px;
+  align-items:stretch;
+}
+
+.pass-hero-copy{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:20px;
+  text-align:left;
+
+  box-shadow:var(--shadow);
+}
+
+.pass-hero-copy h1{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.pass-hero-copy p{
+  margin:0 0 12px;
+
+  color:var(--text-700);
+  line-height:1.7;
+}
+
+.pass-hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+/* Hero image */
+.pass-hero-media{
+  overflow:hidden;
+
+  border-radius:16px;
+  border:1px solid var(--border);
+
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.pass-hero-media img{
+  width:100%;
+  height:100%;
+  min-height:240px;
+
+  object-fit:cover;
+  display:block;
+}
+
+/* ===========================
+   INTRO / PROCESS
+=========================== */
+
+.pass-section{
+  padding:18px 0;
+}
+
+.pass-section-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+}
+
+.pass-two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.pass-panel{
+  background:var(--soft);
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+  text-align:left;
+
+  box-shadow:var(--shadow);
+}
+
+.pass-panel h2{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.pass-panel h3{
+  margin:0 0 10px;
+  color:var(--text-900);
+}
+
+.pass-panel p{
+  line-height:1.7;
+  color:var(--text-700);
+}
+
+/* Process steps */
+.process-list{
+  margin:0;
+  padding-left:18px;
+}
+
+.process-list li{
+  margin:8px 0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   METHODS
+=========================== */
+
+.pass-method-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.pass-method{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.pass-method h3{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.pass-method p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   DOCUMENTATION
+=========================== */
+
+.pass-docs{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+  gap:16px;
+}
+
+.pass-doc-card{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.pass-doc-card h3{
+  margin:0 0 10px;
+  color:var(--text-900);
+}
+
+.pass-doc-card p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   EQUIPMENT
+=========================== */
+
+.equip-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.equip-card{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  overflow:hidden;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.equip-card img{
+  width:100%;
+  height:260px;
+
+  object-fit:cover;
+  display:block;
+}
+
+.equip-card-content{
+  padding:16px;
+}
+
+.equip-card-content h3{
+  margin:0 0 8px;
+  color:var(--green-800);
+}
+
+.equip-card-content p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.pass-cta{
+  padding:28px 0;
+}
+
+.pass-cta-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border:1px solid var(--border);
+  border-radius:18px;
+
+  padding:22px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+
+  box-shadow:var(--shadow);
+}
+
+.pass-cta-copy h2{
+  margin:0 0 8px;
+  color:var(--green-800);
+}
+
+.pass-cta-copy p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+.pass-cta-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:950px){
+
+  .pass-hero-inner,
+  .pass-two-col,
+  .pass-method-grid,
+  .equip-row{
+    grid-template-columns:1fr;
+  }
+
+  .pass-cta-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media (max-width:680px){
+
+  .pass-hero{
+    padding-top:20px;
+  }
+}

@@ -1,0 +1,250 @@
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page main{
+  padding:0;
+}
+
+/* HERO */
+.about-hero{
+  position:relative;
+  height:58vh;
+  min-height:420px;
+  max-height:720px;
+  overflow:hidden;
+
+  background:
+    url("../../images/Industries/something.jpg")
+    center/cover
+    no-repeat;
+
+  width:100%;
+  margin:0;
+}
+
+/* Dark overlay */
+.about-hero-shade{
+  position:absolute;
+  inset:0;
+
+  background:rgba(0,0,0,.35);
+
+  display:flex;
+  align-items:center;
+}
+
+/* Content container */
+.about-hero-inner{
+  padding:0;
+  color:#fff;
+}
+
+.about-hero-inner h1{
+  margin:0 0 10px;
+
+  font-size:clamp(36px,5vw,60px);
+  line-height:1.1;
+}
+
+.about-hero-inner p{
+  margin:0 0 18px;
+  max-width:65ch;
+
+  line-height:1.6;
+}
+
+/* Buttons row */
+.hero-buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.about-content{
+  width:min(1200px,92vw);
+  margin:40px auto;
+  padding:0;
+}
+
+.about-content h2{
+  margin-top:34px;
+}
+
+/* Grid layout */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  margin-top:30px;
+}
+
+.about-grid h3{
+  margin-bottom:10px;
+}
+
+.about-grid ul{
+  padding-left:18px;
+}
+
+/* ===========================
+   HIGHLIGHTS
+=========================== */
+
+.about-section-title{
+  margin:0 0 14px;
+  color: var(--green-800);
+  font-weight:900;
+  text-align:center;
+}
+
+.about-highlights{
+  padding:18px 0 6px;
+}
+
+.about-highlights-grid{
+  display:grid;
+  grid-template-columns:
+    repeat(3, minmax(0,1fr));
+
+  gap:14px;
+}
+
+.about-highlight{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+
+  padding:14px;
+
+  box-shadow: var(--shadow-soft);
+  text-align:left;
+}
+
+.about-highlight h3{
+  margin:0 0 6px;
+  color: var(--text-900);
+  font-size:1.05rem;
+}
+
+.about-highlight p{
+  margin:0;
+  color: var(--text-700);
+  line-height:1.5;
+  font-weight:500;
+}
+
+/* ===========================
+   CTA PANEL
+=========================== */
+
+.about-panel--cta{
+  margin-top:32px;
+  padding:22px 26px;
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border:1px solid rgba(15,77,15,.18);
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.06);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+
+  position:relative;
+  overflow:hidden;
+}
+
+/* Accent line */
+.about-panel--cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  border-left:6px solid
+  var(--green-700);
+
+  pointer-events:none;
+}
+
+.about-panel--cta p{
+  margin:0;
+  max-width:75ch;
+
+  line-height:1.7;
+
+  color: var(--text-700);
+  font-weight:600;
+  font-size:1.02rem;
+}
+
+.about-cta-actions{
+  display:flex;
+  gap:12px;
+  flex-shrink:0;
+}
+
+/* Better buttons */
+.about-panel--cta .btn{
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+
+.about-panel--cta .btn-primary:hover{
+  transform:translateY(-1px);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.12);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:950px){
+
+  .about-highlights-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width:900px){
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+}
+
+@media (max-width:680px){
+
+  .about-hero{
+    height:52vh;
+    min-height:360px;
+  }
+
+  .about-panel--cta{
+    padding:20px;
+    text-align:left;
+  }
+
+  .about-cta-actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+}

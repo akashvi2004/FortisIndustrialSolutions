@@ -1,0 +1,297 @@
+/* =========================================
+   POLISHING CONTINUED PAGE
+========================================= */
+
+/* ===========================
+   HERO
+=========================== */
+
+.polish-contd-hero{
+  padding:26px 0 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border-bottom:1px solid var(--border);
+}
+
+.polish-contd-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:18px;
+
+  align-items:stretch;
+}
+
+.polish-contd-copy{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:20px;
+  box-shadow:var(--shadow);
+
+  text-align:left;
+}
+
+.polish-contd-copy h1{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.polish-contd-copy p{
+  margin:0 0 12px;
+  line-height:1.7;
+  color:var(--text-700);
+}
+
+.polish-contd-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+/* Hero image */
+.polish-contd-media{
+  overflow:hidden;
+
+  border-radius:16px;
+  border:1px solid var(--border);
+
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.polish-contd-media img{
+  width:100%;
+  height:100%;
+  min-height:240px;
+
+  object-fit:cover;
+  display:block;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.polish-section{
+  padding:20px 0;
+}
+
+.polish-section-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+}
+
+.polish-two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.polish-panel{
+  background:var(--soft);
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+  box-shadow:var(--shadow);
+
+  text-align:left;
+}
+
+.polish-panel h2{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.polish-panel h3{
+  margin:0 0 8px;
+  color:var(--text-900);
+}
+
+.polish-panel p{
+  margin:0;
+  line-height:1.7;
+  color:var(--text-700);
+}
+
+/* Lists */
+.polish-list{
+  margin:0;
+  padding-left:18px;
+}
+
+.polish-list li{
+  margin:8px 0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+
+.polish-gallery{
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+  gap:16px;
+}
+
+.polish-gallery-card{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+}
+
+.polish-gallery-card img{
+  width:100%;
+  height:240px;
+
+  object-fit:cover;
+  display:block;
+}
+
+.polish-gallery-content{
+  padding:14px;
+}
+
+.polish-gallery-content h3{
+  margin:0 0 8px;
+  color:var(--green-800);
+}
+
+.polish-gallery-content p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   TABLES
+=========================== */
+
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+
+  background:#fff;
+  border:1px solid #e5efe6;
+  border-radius:12px;
+}
+
+.polish-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:560px;
+}
+
+.polish-table th,
+.polish-table td{
+  padding:12px;
+  border-bottom:1px solid #eef3ee;
+  vertical-align:top;
+}
+
+.polish-table th{
+  text-align:left;
+  background:#f8fcf8;
+
+  color:var(--text-800);
+  font-weight:900;
+}
+
+.polish-table tr:last-child td{
+  border-bottom:none;
+}
+
+/* ===========================
+   CTA
+=========================== */
+
+.polish-cta{
+  padding:28px 0;
+}
+
+.polish-cta-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border:1px solid var(--border);
+  border-radius:18px;
+
+  padding:22px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+
+  box-shadow:var(--shadow);
+}
+
+.polish-cta-copy h2{
+  margin:0 0 8px;
+  color:var(--green-800);
+}
+
+.polish-cta-copy p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+.polish-cta-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:950px){
+
+  .polish-contd-inner,
+  .polish-two-col{
+    grid-template-columns:1fr;
+  }
+
+  .polish-cta-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media (max-width:680px){
+
+  .polish-contd-hero{
+    padding-top:20px;
+  }
+}

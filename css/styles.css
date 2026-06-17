@@ -1,0 +1,33 @@
+/* =====================
+   BASE
+===================== */
+@import url("base/variables.css");
+
+/* =====================
+   LAYOUT
+===================== */
+@import url("layout/header.css");
+@import url("layout/footer.css");
+
+/* =====================
+   COMPONENTS
+===================== */
+@import url("components/buttons.css");
+@import url("components/forms.css");
+
+/* =====================
+   PAGE STYLES
+===================== */
+@import url("pages/home.css");
+@import url("pages/about.css");
+@import url("pages/fabrication.css");
+@import url("pages/design.css");
+@import url("pages/mobile.css");
+@import url("pages/passivation.css");
+@import url("pages/polishing.css");
+
+@import url("pages/polishing_contd.css");
+@import url("pages/industry.css");
+@import url("pages/services.css");
+@import url("pages/sandblasting.css");
+@import url("pages/contact.css");

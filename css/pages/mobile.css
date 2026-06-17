@@ -1,0 +1,516 @@
+/* =========================================
+   MOBILE SERVICES PAGE
+========================================= */
+
+/* ===========================
+   HERO
+=========================== */
+
+.mobile-hero{
+  padding:26px 0 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border-bottom:1px solid var(--border);
+}
+
+.mobile-hero-copy h1{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.mobile-hero-copy p{
+  margin:0 0 12px;
+  color:var(--text-700);
+  line-height:1.7;
+}
+
+.mobile-hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+  justify-content:center;
+}
+
+
+
+/* ===========================
+   ABOUT STYLE HERO
+=========================== */
+
+.about-style-hero{
+  position:relative;
+  overflow:hidden;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0,77,0,.92) 0%,
+      rgba(0,48,0,.96) 100%
+    );
+
+  color:#fff;
+  padding:24px 24px;
+
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.12);
+}
+
+.about-style-hero h2{
+  margin:0 0 12px;
+  color:#fff;
+}
+
+.about-style-hero p{
+  margin:0;
+  line-height:1.8;
+  opacity:.96;
+}
+
+/* ===========================
+   BENEFITS
+=========================== */
+
+.mobile-benefits{
+  padding:18px 0;
+}
+
+.mobile-benefits-grid{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+  gap:16px;
+}
+
+.mobile-benefit-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+  text-align:left;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.mobile-benefit-card h3{
+  margin:0 0 10px;
+  color:var(--text-900);
+}
+
+.mobile-benefit-card p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+/* ===========================
+   SERVICES
+=========================== */
+
+.mobile-services{
+  padding:18px 0;
+}
+
+.mobile-services-grid{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+  gap:16px;
+}
+
+.mobile-service-card{
+  background:var(--soft);
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:18px;
+  text-align:left;
+
+  box-shadow:var(--shadow);
+}
+
+.mobile-service-card h3{
+  margin:0 0 10px;
+  color:var(--green-800);
+}
+
+.mobile-service-card ul{
+  margin:0;
+  padding-left:18px;
+}
+
+.mobile-service-card li{
+  margin:8px 0;
+  color:var(--text-700);
+  line-height:1.6;
+}
+
+/* ===========================
+   CTA BAND
+=========================== */
+
+.mobile-cta{
+  padding:28px 0;
+}
+
+.mobile-cta-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f9fdf9 0%,
+      #eef7ef 100%
+    );
+
+  border:1px solid var(--border);
+  border-radius:18px;
+
+  padding:22px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+
+  box-shadow:var(--shadow);
+}
+
+.mobile-cta-copy h2{
+  margin:0 0 8px;
+  color:var(--green-800);
+}
+
+.mobile-cta-copy p{
+  margin:0;
+  color:var(--text-700);
+  line-height:1.6;
+}
+
+.mobile-cta-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:950px){
+
+  .mobile-hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .mobile-cta-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media (max-width:680px){
+
+  .mobile-hero{
+    padding-top:20px;
+  }
+
+  .about-style-hero{
+    padding:24px 20px;
+  }
+}
+
+/* =========================================
+   MOBILE PAGE FIXES
+========================================= */
+
+.mobile-section{
+    padding:20px 0;
+}
+
+.mobile-section-inner{
+    width:min(1200px,92vw);
+    margin:0 auto;
+}
+
+.mobile-h2{
+    text-align:center;
+    color:var(--green-800);
+    font-size:2rem;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.mobile-h2-left{
+    color:var(--green-800);
+    font-size:1.8rem;
+    margin-bottom:16px;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.mobile-hero{
+    padding:16px 0;
+}
+
+.mobile-hero-content{
+    width:min(1000px,92vw);
+    margin:0 auto;
+    text-align:center;
+}
+
+.mobile-hero h1{
+    font-size:clamp(2rem,3vw,3rem);
+    margin-bottom:12px;
+}
+
+.mobile-hero p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* ==========================
+   BENEFITS
+========================== */
+
+.mobile-benefit{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    box-shadow:var(--shadow-soft);
+}
+
+.mobile-benefit-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:10px;
+}
+
+.mobile-check{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:var(--green-700);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+}
+
+.mobile-benefit h3{
+    margin:0;
+}
+
+.mobile-benefit p{
+    margin:0;
+    line-height:1.6;
+}
+
+/* ==========================
+   SERVICES
+========================== */
+
+.mobile-service-card{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+}
+
+.mobile-service-icon img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+}
+
+/* ==========================
+   EQUIPMENT / INSTALLATIONS
+========================== */
+
+.mobile-duo{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+}
+
+.mobile-duo-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:24px;
+    box-shadow:var(--shadow-soft);
+}
+
+.mobile-lead-left{
+    color:var(--text-700);
+    margin-bottom:18px;
+}
+
+.mobile-mini-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-bottom:20px;
+}
+
+.mobile-mini{
+    background:var(--soft);
+    border-radius:12px;
+    padding:16px;
+}
+
+.mobile-mini h3{
+    margin-top:0;
+    color:var(--green-800);
+}
+
+.divider{
+    height:1px;
+    background:#dfe9df;
+    margin:18px 0;
+}
+
+.mobile-equip-2col{
+    columns:2;
+    column-gap:24px;
+}
+
+.mobile-equip-list{
+    padding-left:18px;
+}
+
+.mobile-equip-list li{
+    margin-bottom:12px;
+}
+
+/* ==========================
+   WHY CHOOSE FORTIS
+========================== */
+
+.mobile-why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.mobile-why-card{
+    background:var(--green-900);
+    color:#fff;
+    border-radius:16px;
+    padding:24px;
+}
+
+.mobile-why-card h3{
+    color:#fff;
+    margin-top:0;
+}
+
+.mobile-why-card p{
+    margin-bottom:0;
+    opacity:.95;
+}
+
+/* ==========================
+   CTA
+========================== */
+
+.mobile-cta-inner{
+    text-align:center;
+    justify-content:center;
+}
+
+.mobile-cta-inner p{
+    font-size:1.1rem;
+    margin:0;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+    .mobile-duo{
+        grid-template-columns:1fr;
+    }
+
+    .mobile-mini-grid{
+        grid-template-columns:1fr;
+    }
+
+    .mobile-why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .mobile-equip-2col{
+        columns:1;
+    }
+}
+
+@media(max-width:600px){
+
+    .mobile-why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .mobile-h2{
+        font-size:1.7rem;
+    }
+
+    .mobile-hero h1{
+        font-size:2.3rem;
+    }
+}
+
+/* MOBILE PAGE SPACING FIXES */
+
+.mobile-hero{
+    padding:16px 0;
+}
+
+.about-style-hero{
+    padding:24px;
+}
+
+.mobile-hero h1{
+    font-size:clamp(2rem,3vw,3rem);
+    margin-bottom:12px;
+}
+
+.mobile-hero-actions{
+    justify-content:center;
+}
+
+.mobile-section{
+    padding:20px 0;
+}
+
+.mobile-h2{
+    margin-bottom:14px;
+}

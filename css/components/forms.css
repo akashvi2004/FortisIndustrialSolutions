@@ -1,0 +1,110 @@
+/* ===========================
+   FORMS (Contact / Quote)
+=========================== */
+
+.quote-form{
+  max-width:700px;
+  margin:0 auto;
+  padding:30px 20px;
+}
+
+.form-container{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.form-row{
+  display:flex;
+  flex-direction:column;
+}
+
+/* Labels */
+.form-row label{
+  text-align:left;
+  display:block;
+  margin-bottom:6px;
+  font-weight:bold;
+  color: var(--green-900);
+}
+
+/* Inputs */
+.form-row input,
+.form-row select,
+.form-row textarea{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:1rem;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus{
+  outline:none;
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 3px rgba(0,102,0,.12);
+}
+
+.form-row textarea{
+  resize:vertical;
+}
+
+/* Submit button */
+button[type="submit"]{
+  background-color: var(--green-700);
+  color:#fff;
+
+  padding:12px;
+  font-size:1rem;
+
+  border:none;
+  border-radius:6px;
+
+  cursor:pointer;
+
+  transition:
+    background-color .3s ease,
+    transform .15s ease;
+}
+
+button[type="submit"]:hover{
+  background-color: var(--green-650);
+  transform: translateY(-1px);
+}
+
+/* Required field star */
+label span{
+  color:red;
+}
+
+/* Google Form Embed */
+.form-embed,
+.quote-form{
+  width:100%;
+  max-width:100%;
+}
+
+.form-embed iframe,
+.quote-form iframe{
+  display:block;
+  width:100% !important;
+  max-width:100%;
+
+  border:0;
+  height:auto;
+  min-height:1200px;
+}
+
+/* Mobile adjustments */
+@media (max-width:680px){
+
+  .form-embed iframe,
+  .quote-form iframe{
+    min-height:1500px;
+  }
+}

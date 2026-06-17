@@ -1,0 +1,290 @@
+:root{
+  --green-900:#003000;
+  --green-850:#024a02;
+  --green-800:#0a4d0a;
+  --green-700:#006600;
+  --green-650:#004d00;
+
+  --text-900:#0b2f0e;
+  --text-800:#063a06;
+  --text-700:#1c3a1c;
+
+  --bg:#ffffffe5;
+  --sheet:#ffffff;
+  --soft:#f4faf5;
+
+  --border:#cfe6d2;
+  --border-2:#cfded0;
+  --border-light:#e6e6e6;
+
+  --shadow:0 8px 22px rgba(0,0,0,.06);
+  --shadow-soft:0 1px 0 rgba(0,0,0,.03);
+
+  --radius:16px;
+  --radius-sm:12px;
+
+  --focus:#cfe6d2;
+}
+
+/* ===========================
+   BASE / DEFAULTS
+=========================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 140px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  font-family: Tahoma, Verdana, Segoe UI, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-900);
+}
+
+main{
+  padding:20px;
+}
+
+section{
+  margin-bottom:40px;
+}
+
+h2{
+  color: var(--green-700);
+}
+
+/* IMPORTANT:
+Do NOT remove bullets globally.
+Only nav menus should remove bullets */
+.main-nav,
+.dropdown-menu{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+/* Accessibility helper */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* Focus rings */
+.logo-link:focus,
+.header-cta:focus,
+.main-nav a:focus,
+.hero-nav:focus,
+.hero-dots button:focus,
+.nav-toggle:focus{
+  outline:2px solid var(--focus);
+  outline-offset:2px;
+  border-radius:8px;
+}
+
+/* ===========================
+   UI KIT (Reusable system)
+=========================== */
+
+.container{
+  width:min(1200px,92vw);
+  margin:0 auto;
+}
+
+.sheet{
+  text-align:left;
+}
+
+.center{
+  text-align:center;
+}
+
+/* Panels */
+.panel{
+  background: var(--soft);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding:18px;
+  box-shadow: var(--shadow);
+  text-align:left;
+}
+
+.panel--white{
+  background: var(--sheet);
+  border-color: var(--border);
+}
+
+.panel--thin{
+  box-shadow: var(--shadow-soft);
+}
+
+.panel h2{
+  margin:0 0 10px;
+  color: var(--green-800);
+}
+
+.panel h3{
+  margin:0 0 10px;
+  color: var(--text-900);
+}
+
+/* Grids */
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+
+.grid-auto-160{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:10px;
+}
+
+.grid-auto-230{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
+}
+
+/* Lists */
+.list{
+  margin:0;
+  padding-left:18px;
+  list-style:disc;
+}
+
+.list--steps{
+  list-style:decimal;
+}
+
+.list li{
+  margin:8px 0;
+  line-height:1.6;
+  color: var(--text-700);
+}
+
+/* Pills */
+.pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.pill{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:8px 10px;
+  font-weight:800;
+  color: var(--text-900);
+}
+
+/* Hero band */
+.hero-band{
+  padding:26px 0 14px;
+  background: linear-gradient(
+    135deg,
+    #f9fdf9 0%,
+    #eef7ef 100%
+  );
+  border-bottom:1px solid var(--border);
+}
+
+.hero-grid{
+  width:min(1200px,92vw);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:18px;
+  align-items:stretch;
+  text-align:left;
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.hero-media{
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background:#fff;
+  box-shadow: var(--shadow);
+}
+
+.hero-media img{
+  width:100%;
+  height:100%;
+  min-height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+/* CTA Bands */
+.cta-band{
+  border-radius: var(--radius);
+  background: linear-gradient(
+    135deg,
+    #f9fdf9 0%,
+    #eef7ef 100%
+  );
+
+  border:1px solid var(--border);
+  padding:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.cta-band h2{
+  margin:0 0 6px;
+  color: var(--green-800);
+}
+
+.cta-band p{
+  margin:0;
+  color: var(--text-700);
+  opacity:.92;
+}
+
+.cta-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* Responsive */
+@media (max-width:950px){
+  .grid-2,
+  .grid-3,
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+}

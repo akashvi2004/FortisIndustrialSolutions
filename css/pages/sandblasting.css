@@ -1,0 +1,388 @@
+/* =========================================
+   SANDBLASTING / GLASS BEADING PAGE
+========================================= */
+
+.sb-hero{
+  padding:20px 0 12px;
+  background:#f7faf7;
+}
+
+.sb-hero-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:20px;
+
+  align-items:stretch;
+}
+
+.sb-hero-copy{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:18px;
+
+  padding:24px;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.sb-hero-copy h1{
+  margin:0 0 12px;
+
+  color:var(--green-800);
+
+  font-size:clamp(48px,5vw,78px);
+  line-height:1.02;
+
+  font-weight:900;
+}
+
+.sb-subtitle{
+  font-size:18px;
+  line-height:1.5;
+
+  margin-bottom:18px;
+
+  color:var(--text-700);
+  font-weight:700;
+}
+
+.sb-hero-copy p{
+  margin:0 0 14px;
+
+  line-height:1.65;
+  color:var(--text-700);
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+
+  margin-top:18px;
+}
+
+.sb-hero-media{
+  overflow:hidden;
+
+  border-radius:18px;
+
+  border:1px solid var(--border);
+
+  box-shadow:var(--shadow-soft);
+}
+
+.sb-hero-media img{
+  width:100%;
+  height:100%;
+
+  min-height:520px;
+
+  object-fit:cover;
+  display:block;
+}
+
+/* SECTION BASICS */
+
+.sb-section{
+  padding:28px 0;
+}
+
+.sb-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+}
+
+.sb-title{
+  text-align:center;
+  color:var(--green-800);
+  margin-bottom:32px;
+  font-size:clamp(32px,3vw,48px);
+}
+
+
+/* BENEFITS */
+
+.sb-benefits{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+
+.sb-benefit{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+}
+
+.sb-benefit-top{
+  background:var(--green-900);
+  color:#fff;
+  padding:16px;
+  min-height:110px;
+}
+
+.sb-benefit-top h3{
+  color:#fff;
+  margin:12px 0 0;
+  font-size:1.15rem;
+}
+
+.sb-benefit-icon{
+  width:48px;
+  height:48px;
+}
+
+.sb-benefit-icon img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.sb-benefit-body{
+  padding:18px;
+}
+
+.sb-benefit-body p{
+  margin:0;
+  line-height:1.7;
+}
+
+
+/* GREEN BAND */
+
+.sb-band{
+  background:var(--green-900);
+  color:#fff;
+  padding:28px 0;
+}
+
+.sb-band-inner{
+  width:min(1200px,92vw);
+  margin:0 auto;
+  text-align:center;
+}
+
+.sb-band-inner strong{
+  display:block;
+  font-size:2rem;
+  margin-bottom:12px;
+}
+
+
+/* EQUIPMENT */
+
+.sb-equip{
+  padding:60px 0;
+}
+
+.sb-equip-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+
+.sb-equip-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+  box-shadow:var(--shadow-soft);
+}
+
+.sb-equip-icon{
+  width:70px;
+  height:70px;
+  margin:0 auto 14px;
+}
+
+.sb-equip-icon img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.sb-equip-card h3{
+  margin:0 0 10px;
+  color:var(--green-800);
+  font-size:1.1rem;
+}
+
+.sb-equip-card p{
+  margin:0;
+  line-height:1.6;
+  color:var(--text-700);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:1200px){
+
+  .sb-benefits,
+  .sb-equip-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+@media (max-width:900px){
+
+  .sb-hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .sb-hero-media img{
+    height:280px;
+  }
+
+  .sb-benefits,
+  .sb-equip-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width:680px){
+
+  .sb-benefits,
+  .sb-equip-grid{
+    grid-template-columns:1fr;
+  }
+
+  .sb-title{
+    font-size:2rem;
+  }
+
+  .sb-band-inner strong{
+    font-size:1.5rem;
+  }
+}
+
+.sb-hero{
+  padding:20px 0 10px;
+  background:#f7faf7;
+}
+
+.sb-hero-inner{
+  width:min(1360px,95vw);
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:20px;
+
+  align-items:stretch;
+}
+
+.sb-hero-copy{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+
+  padding:24px 26px;
+
+  box-shadow:var(--shadow-soft);
+}
+
+.sb-hero-copy h1{
+  margin:0 0 14px;
+
+  color:var(--green-800);
+
+  font-size:clamp(42px,4.2vw,68px);
+  line-height:1.05;
+  font-weight:900;
+}
+
+.sb-subtitle{
+  margin:0 0 20px;
+
+  font-size:18px;
+  font-weight:700;
+  line-height:1.5;
+
+  color:var(--text-700);
+}
+
+.sb-hero-copy p{
+  margin:0 0 14px;
+
+  line-height:1.7;
+  font-size:1.05rem;
+
+  color:var(--text-700);
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+
+  margin-top:18px;
+}
+
+.sb-hero-media{
+  overflow:hidden;
+
+  border-radius:18px;
+  border:1px solid var(--border);
+
+  box-shadow:var(--shadow-soft);
+}
+
+.sb-hero-media img{
+  width:100%;
+  height:100%;
+
+  min-height:520px;
+
+  object-fit:cover;
+  object-position:center;
+
+  display:block;
+}
+
+.sb-section{
+  padding:24px 0;
+}
+
+.sb-title{
+  margin-bottom:18px;
+  font-size:clamp(26px,2.5vw,42px);
+}
+
+.sb-hero-copy h1{
+  font-size:52px;
+  line-height:1.05;
+}
+
+.sb-hero-copy{
+  padding:18px 22px;
+}
+
+.sb-hero-copy p{
+  font-size:1rem;
+  line-height:1.6;
+}
+
+.sb-hero-inner{
+  grid-template-columns:1.25fr .75fr;
+}
+
+.sb-hero-copy h1{
+    font-size:56px;
+    line-height:1.05;
+}
+
+.sb-hero-copy{
+    padding:20px;
+}
+
+.sb-hero-inner{
+    grid-template-columns:1.3fr .7fr;
+}

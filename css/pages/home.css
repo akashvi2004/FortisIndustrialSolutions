@@ -1,0 +1,590 @@
+/* =========================================
+   HOME PAGE
+========================================= */
+
+/* ===========================
+   HERO CAROUSEL
+=========================== */
+
+.hero-carousel{
+  position:relative;
+  height:58vh;
+  min-height:420px;
+  max-height:720px;
+  overflow:hidden;
+}
+
+.hero-slide{
+  position:absolute;
+  inset:0;
+
+  opacity:0;
+  transition:opacity .6s ease;
+}
+
+.hero-slide.is-active{
+  opacity:1;
+  z-index:2;
+}
+
+.hero-slide img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  filter:saturate(105%);
+}
+
+/* Overlay */
+.hero-overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.35) 0%,
+      rgba(0,0,0,.35) 50%,
+      rgba(0,0,0,.15) 100%
+    );
+
+  display:grid;
+  place-content:center;
+
+  text-align:center;
+  padding:0 5vw;
+
+  color:#fff;
+}
+
+.hero-overlay h1{
+  margin:0 0 10px;
+
+  font-size:
+    clamp(26px,4vw,44px);
+
+  line-height:1.1;
+}
+
+.hero-overlay p{
+  margin:0 0 18px;
+
+  font-size:
+    clamp(14px,2.1vw,18px);
+
+  opacity:.95;
+}
+
+/* Carousel arrows */
+.hero-nav{
+  position:absolute;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  border:0;
+
+  background:
+    rgba(0,0,0,.35);
+
+  color:#fff;
+
+  width:44px;
+  height:44px;
+
+  border-radius:11px;
+
+  font-size:22px;
+  cursor:pointer;
+
+  z-index:3;
+}
+
+.hero-nav:hover{
+  background:
+    rgba(0,0,0,.5);
+}
+
+.hero-nav.prev{
+  left:16px;
+}
+
+.hero-nav.next{
+  right:16px;
+}
+
+/* Carousel dots */
+.hero-dots{
+  position:absolute;
+  bottom:14px;
+  left:0;
+  right:0;
+
+  display:flex;
+  justify-content:center;
+  gap:8px;
+
+  z-index:3;
+}
+
+.hero-dots button{
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+  border:0;
+
+  background:
+    rgba(255,255,255,.55);
+
+  cursor:pointer;
+}
+
+.hero-dots button[aria-current="true"],
+.hero-dots button[aria-selected="true"]{
+  background:#fff;
+}
+
+/* ===========================
+   WRAPPERS / SECTION BASICS
+=========================== */
+
+.page-wrapper{
+  max-width:1000px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.page-wrapper img{
+  max-width:100%;
+  height:auto;
+}
+
+.section-head{
+  margin:10px auto 18px;
+}
+
+.section-sub{
+  max-width:78ch;
+  margin:0 auto 12px;
+
+  color: var(--text-700);
+  opacity:.92;
+}
+
+.section-body{
+  max-width:920px;
+  margin:0 auto;
+}
+
+.section-body p{
+  line-height:1.7;
+  text-align:left;
+  margin:0 auto 14px;
+}
+
+.inline-cta{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+
+  margin:18px 0 0;
+}
+
+/* ===========================
+   MARKETS GRID
+=========================== */
+
+.markets h2,
+.featured h2{
+  text-align:center;
+  color: var(--green-800);
+  font-weight:650;
+  margin:20px 0 24px;
+}
+
+.market-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(230px,1fr));
+
+  gap:22px;
+  margin:14px auto 28px;
+
+  width:min(1100px,92vw);
+}
+
+.market-item{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:18px;
+
+  border-radius:14px;
+  background:#fff;
+
+  border:1px solid var(--border-2);
+
+  box-shadow:
+    var(--shadow-soft);
+
+  text-align:center;
+  text-decoration:none;
+
+  transition:
+    transform .16s ease,
+    box-shadow .16s ease,
+    border-color .16s ease;
+}
+
+.market-item p{
+  margin:0;
+
+  color: var(--text-900);
+  font-weight:500;
+  letter-spacing:.1px;
+}
+
+.market-item:hover,
+.market-item:focus{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.08);
+
+  border-color:var(--focus);
+  outline:none;
+}
+
+/* ===========================
+   FEATURED SERVICES
+=========================== */
+
+.featured{
+  padding:36px 0;
+  background:transparent;
+}
+
+.services-grid{
+  width:min(1100px,92vw);
+  margin:0 auto;
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+
+  justify-content:center;
+}
+
+.service-card{
+  flex:0 1 260px;
+  min-height:220px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:18px 16px 16px;
+
+  border-radius:14px;
+
+  background: var(--soft);
+  border:1px solid var(--border);
+
+  box-shadow:
+    var(--shadow-soft);
+
+  transition:
+    transform .16s ease,
+    box-shadow .16s ease,
+    border-color .16s ease,
+    background .16s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.08);
+
+  border-color:#8fcf95;
+  background:#eef7ef;
+}
+
+.service-card h3{
+  margin:6px 0;
+  font-size:1.1rem;
+  text-align:center;
+}
+
+.service-card h3 a{
+  color: var(--text-900);
+  text-decoration:none;
+}
+
+.service-card h3 a:hover{
+  text-decoration:underline;
+}
+
+.service-card p{
+  margin:0 0 12px;
+
+  color: var(--text-700);
+  font-weight:500;
+
+  max-width:260px;
+}
+
+/* Hover details */
+.service-card .svc-details{
+  margin:10px 0 12px;
+  padding-left:0;
+
+  text-align:center;
+  list-style-position:inside;
+
+  opacity:0;
+  max-height:0;
+  overflow:hidden;
+
+  transition:
+    opacity .25s ease,
+    max-height .25s ease;
+}
+
+.service-card.hover-card:hover
+.svc-details,
+
+.service-card.hover-card:focus-within
+.svc-details{
+  opacity:1;
+  max-height:200px;
+}
+
+/* Mobile show */
+@media (max-width:768px){
+
+  .service-card .svc-details{
+    opacity:1;
+    max-height:none;
+  }
+}
+
+/* Lists inside cards */
+.service-card ul{
+  margin:10px auto 12px;
+  max-width:260px;
+  text-align:left;
+}
+
+.service-card li{
+  margin:6px 0;
+  line-height:1.45;
+}
+
+/* ===========================
+   TIMELINE
+=========================== */
+
+.timeline{
+  position:relative;
+  margin:20px 0;
+}
+
+.timeline-item{
+  margin-bottom:24px;
+  position:relative;
+}
+
+.timeline-item::before{
+  content:"";
+
+  position:absolute;
+  left:-12px;
+  top:4px;
+
+  width:14px;
+  height:14px;
+
+  border-radius:50%;
+  border:2px solid #fff;
+}
+
+.timeline-item h3{
+  margin:0 0 6px;
+
+  font-size:1.05rem;
+  color: var(--text-900);
+}
+
+.timeline-item p{
+  margin:0;
+
+  color: var(--text-700);
+  line-height:1.5;
+}
+
+/* =========================================
+   INDUSTRIES & SYSTEMS
+========================================= */
+
+.industries-block{
+  padding: 20px 0 10px;
+}
+
+.industries-block .section-head{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.industries-block .section-head h2{
+  margin:0 0 12px;
+
+  color:var(--green-700);
+
+  font-size:1.6rem;
+  font-weight:700;
+
+  line-height:1.2;
+}
+
+.industries-block .section-sub{
+  margin:0 auto;
+
+  max-width:700px;
+
+  font-size:1rem;
+  line-height:1.6;
+
+  color:var(--text-700);
+}
+
+.industries-block .two-col{
+  width:min(950px,92vw);
+
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:24px;
+}
+
+.industries-block .col-box{
+  background:var(--soft);
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  padding:22px 24px;
+
+  text-align:center;
+}
+
+.industries-block .col-box h3{
+  margin:14px;
+
+  color:var(--green-900);
+
+  font-size:1.15rem;
+  font-weight:800;
+}
+
+.industries-block .col-box ul{
+  margin:0;
+  padding-left:24px;
+
+  text-align:left;
+}
+
+.industries-block .col-box li{
+  margin:10px 0;
+
+  font-size:0.95rem;
+  line-height:1.45;
+
+  color:var(--text-900);
+}
+
+.industries-cta{
+  text-align:center;
+
+  margin-top:28px;
+}
+
+.industries-cta h2{
+  margin:0 0 12px;
+
+  color:var(--green-700);
+
+  font-size:1.6rem;
+  font-weight:700;
+}
+
+.industries-cta p{
+  max-width:700px;
+
+  margin:0 auto;
+
+  line-height:1.6;
+
+  color:var(--text-700);
+}
+
+/* Responsive */
+
+@media (max-width:900px){
+
+  .industries-block .two-col{
+    grid-template-columns:1fr;
+  }
+
+  .industries-block .col-box{
+    padding:24px 20px;
+  }
+
+  .industries-block .section-head h2{
+    font-size: 2rem;
+    font-weight:700;
+}
+
+  .industries-cta h2{
+    font-size:1.6rem;
+  }
+}
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:680px){
+
+  .hero-carousel{
+    height:52vh;
+    min-height:360px;
+  }
+
+  .hero-overlay p{
+    font-size:
+      clamp(14px,2.4vw,17px);
+  }
+}
+
+@media (max-width:480px){
+
+  .market-grid{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .hero-carousel{
+    min-height:320px;
+  }
+}

@@ -1,0 +1,118 @@
+/* ===========================
+   BUTTON SYSTEM
+=========================== */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  padding:11px 16px;
+  border-radius:10px;
+
+  text-decoration:none;
+  font-weight:700;
+
+  border:1px solid var(--border);
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    transform .15s ease;
+}
+
+/* Primary */
+.btn-primary{
+  background: var(--green-700);
+  color:#fff;
+  border-color: var(--green-700);
+}
+
+.btn-primary:hover{
+  background: var(--green-650);
+  border-color: var(--green-650);
+  transform: translateY(-1px);
+}
+
+/* Secondary */
+.btn-secondary{
+  background:#fff;
+  color: var(--text-800);
+}
+
+.btn-secondary:hover{
+  background:#7ed957;
+  border-color:#7ed957;
+  color: var(--green-900);
+  transform: translateY(-1px);
+}
+
+/* Hero CTA */
+.hero-cta{
+  display:inline-block;
+  background:#0b4f17;
+  color:#fff;
+
+  padding:10px 16px;
+  border-radius:10px;
+
+  text-decoration:none;
+  font-weight:600;
+
+  transition:
+    background .2s ease,
+    transform .15s ease;
+}
+
+.hero-cta:hover{
+  background:#083a11;
+  transform: translateY(-1px);
+}
+
+/* Hero action row */
+.hero-actions{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+/* Secondary hero button */
+.hero-cta-secondary{
+  background: rgba(255,255,255,.92);
+  color: var(--text-800);
+  border:1px solid rgba(255,255,255,.85);
+}
+
+.hero-cta-secondary:hover{
+  background:#7ed957;
+  color: var(--green-900);
+  border-color:#7ed957;
+}
+
+/* Service CTA */
+.svc-cta{
+  display:inline-block;
+
+  padding:8px 12px;
+  border-radius:8px;
+
+  background:#ffffff;
+  color: var(--text-800);
+
+  border:1px solid var(--border);
+
+  text-decoration:none;
+  font-weight:600;
+
+  margin-top:12px;
+}
+
+.svc-cta:hover{
+  background:#7ed957;
+  color: var(--green-900);
+  border-color:#7ed957;
+}

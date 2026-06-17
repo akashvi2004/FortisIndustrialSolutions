@@ -1,0 +1,285 @@
+/* ===========================
+   HEADER / LOGO / NAV
+=========================== */
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+
+  padding:16px 24px;
+
+  background: var(--green-900);
+  color:#fff;
+}
+
+.logo-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
+
+.logo-img{
+  height:65px;
+  width:auto;
+  display:block;
+  max-height:14vh;
+}
+
+/* Desktop nav */
+.header-nav{
+  display:block;
+}
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.main-nav > li{
+  position:relative;
+}
+
+.main-nav > li > a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:12px 14px;
+  display:inline-block;
+  border-radius:10px;
+  line-height:1;
+}
+
+.main-nav > li > a:not(.header-cta):hover,
+.main-nav > li > a:not(.header-cta):focus{
+  background: var(--green-850);
+  outline:2px solid transparent;
+}
+
+/* Request Quote button */
+.header-cta{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:8px;
+
+  background: green;
+  color:#fff;
+
+  border:2px solid #ffffff;
+  font-weight:700;
+  text-decoration:none;
+  line-height:1;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    filter .2s ease;
+}
+
+.header-cta:hover,
+.header-cta:focus{
+  background:#7ed957;
+  color: var(--green-900);
+  border-color:#7ed957;
+  outline:0;
+}
+
+/* ===========================
+   DROPDOWN MENU
+=========================== */
+
+.main-nav .dropdown{
+  position:relative;
+}
+
+.dropdown > a{
+  padding-right:26px;
+}
+
+.main-nav .dropdown .dropdown-menu{
+  position:absolute;
+  top:100%;
+  right:0;
+  left:auto;
+
+  min-width:240px;
+  max-width:min(94vw, 360px);
+
+  background:#fff;
+  color: var(--text-800);
+
+  padding:8px;
+  margin-top:6px;
+
+  border:1px solid var(--border-light);
+  border-radius:12px;
+
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+  visibility:hidden;
+  opacity:0;
+  transform: translateY(6px);
+
+  transition:
+    opacity .18s,
+    transform .18s,
+    visibility .18s;
+
+  z-index:1000;
+}
+
+.main-nav .dropdown .dropdown-menu a{
+  color: var(--text-800);
+  padding:9px 10px;
+  border-radius:8px;
+  display:block;
+  text-decoration:none;
+}
+
+.main-nav .dropdown .dropdown-menu a:hover,
+.main-nav .dropdown .dropdown-menu a:focus{
+  background:#f1f5f2;
+}
+
+.main-nav .dropdown:hover .dropdown-menu,
+.main-nav .dropdown:focus-within .dropdown-menu{
+  visibility:visible;
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Tablet dropdown */
+@media (max-width:1024px) and (min-width:681px){
+  .main-nav .dropdown .dropdown-menu{
+    right:0;
+    left:auto;
+    width:min(92vw, 360px);
+  }
+}
+
+/* ===========================
+   MOBILE NAV
+=========================== */
+
+/* Hide hamburger desktop */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer;
+}
+
+@media (max-width:680px){
+
+  .nav-toggle{
+    display:block;
+  }
+
+  .header-nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    width:100%;
+
+    background: var(--green-900);
+    padding:20px;
+  }
+
+  .header-nav.is-open{
+    display:block;
+  }
+
+  .main-nav{
+    flex-direction:column;
+    gap:12px;
+    width:100%;
+  }
+
+  .main-nav > li > a{
+    display:block;
+    padding:12px;
+  }
+
+  /* Mobile accordion dropdown */
+  .dropdown .dropdown-menu{
+    position:static;
+    background: var(--green-850);
+    border:none;
+    box-shadow:none;
+
+    padding-left:16px;
+    margin-top:8px;
+
+    display:none;
+    max-height:none;
+
+    transform:none;
+    visibility:visible;
+    opacity:1;
+  }
+
+  .dropdown.is-open .dropdown-menu{
+    display:block;
+  }
+
+  .dropdown .dropdown-menu a{
+    color:#fff;
+    padding:10px;
+  }
+
+  html,
+  body{
+    overflow-x:hidden;
+  }
+}
+
+/* Responsive logo sizing */
+@media (max-width:1200px){
+  .logo-img{
+    height:90px;
+  }
+}
+
+@media (max-width:1024px){
+  .logo-img{
+    height:84px;
+  }
+
+  .main-nav{
+    gap:8px;
+  }
+}
+
+@media (max-width:900px){
+  .logo-img{
+    height:72px;
+  }
+
+  .main-nav > li > a{
+    padding:10px 12px;
+  }
+}
+
+@media (max-width:680px){
+  .logo-img{
+    height:60px;
+  }
+}
+
+@media (max-width:480px){
+  .logo-img{
+    height:52px;
+  }
+}
